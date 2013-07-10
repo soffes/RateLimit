@@ -11,10 +11,8 @@
 @implementation SAMRateLimit
 
 + (BOOL)executeBlock:(void(^)(void))block name:(NSString *)name limit:(NSTimeInterval)limit {
-	// Prevent a nil block
-	if (!block) {
-		return NO;
-	}
+    // Prevent a nil block
+    NSParameterAssert(block);
 
 	// Lookup last executed
 	NSMutableDictionary *dictionary = [self dictionary];

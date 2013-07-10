@@ -8,7 +8,15 @@
 
 #import "SAMRateLimit.h"
 
+static NSMutableDictionary *_dictionary = nil;
+
 @implementation SAMRateLimit
+
++ (void)initialize {
+    if (self = [SAMRateLimit class]) {
+        _dictionary = [[NSMutableDictionary alloc] init];
+    }
+}
 
 + (BOOL)executeBlock:(void(^)(void))block name:(NSString *)name limit:(NSTimeInterval)limit {
     // Prevent nil parameters
@@ -42,15 +50,6 @@
 }
 
 
-#pragma mark - Private
-
-+ (NSMutableDictionary *)dictionary {
-	static NSMutableDictionary *dictionary = nil;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		dictionary = [[NSMutableDictionary alloc] init];
-	});
-	return dictionary;
 }
 
 @end

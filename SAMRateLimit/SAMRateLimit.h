@@ -6,6 +6,8 @@
 //  Copyright (c) 2012-2013 Sam Soffes. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 /**
  Simple utility for only executing code every so often.
  */
@@ -23,7 +25,7 @@
 
  @return `YES` if the block was executed. `NO` if it was not.
 
- The time will not be persisted across application launches (for now). The block is synchronously executed on the same
+ The time will not be persisted across application launches. The block is synchronously executed on the same
  thread that called this method and not in a GCD queue. If you need to dispatch, simply do that in the block you
  provide.
  */

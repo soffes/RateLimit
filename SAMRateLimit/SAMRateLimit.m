@@ -13,10 +13,11 @@ static NSMutableDictionary *_dictionary = nil;
 @implementation SAMRateLimit
 
 + (void)initialize {
-    if (self = [SAMRateLimit class]) {
+    if (self == [SAMRateLimit class]) {
         _dictionary = [[NSMutableDictionary alloc] init];
     }
 }
+
 
 + (BOOL)executeBlock:(void(^)(void))block name:(NSString *)name limit:(NSTimeInterval)limit {
     // Prevent nil parameters

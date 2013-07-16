@@ -13,20 +13,20 @@
 #pragma mark - Rate Limiting
 
 + (BOOL)executeBlock:(void(^)(void))block name:(NSString *)name limit:(NSTimeInterval)limit {
-    // Prevent nil parameters
-    NSParameterAssert(block);
-    NSParameterAssert(name);
+	// Prevent nil parameters
+	NSParameterAssert(block);
+	NSParameterAssert(name);
 
 	__block BOOL executeBlock = YES;
-    dispatch_sync([self queue], ^{
+	dispatch_sync([self queue], ^{
 		// Lookup last executed
-        NSDate *last = [[self dictionary] objectForKey:name];
-        NSTimeInterval timeInterval = [last timeIntervalSinceNow];
+		NSDate *last = [[self dictionary] objectForKey:name];
+		NSTimeInterval timeInterval = [last timeIntervalSinceNow];
 
-        // If last excuted is less than the limit, don't execute
-        if (timeInterval < 0 && fabs(timeInterval) < limit) {
-            executeBlock = NO;
-        } else {
+		// If last excuted is less than the limit, don't execute
+		if (timeInterval < 0 && fabs(timeInterval) < limit) {
+			executeBlock = NO;
+		} else {
 			[[self dictionary] setObject:[NSDate date] forKey:name];
 		}
 	});
@@ -35,22 +35,22 @@
 	if (executeBlock) {
 		block();
 	}
-	
+
 	return executeBlock;
 }
 
 
 + (void)resetLimitForName:(NSString *)name {
-    dispatch_sync([self queue], ^{
-        [[self dictionary] removeObjectForKey:name];
-    });
+	dispatch_sync([self queue], ^{
+		[[self dictionary] removeObjectForKey:name];
+	});
 }
 
 
 + (void)resetAllLimits {
 	dispatch_sync([self queue], ^{
-        [[self dictionary] removeAllObjects];
-    });
+		[[self dictionary] removeAllObjects];
+	});
 }
 
 

@@ -10,6 +10,8 @@
 
 /**
  Simple utility for only executing code every so often.
+ 
+ All access to this class is thread-safe.
  */
 @interface SAMRateLimit : NSObject
 

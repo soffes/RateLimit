@@ -17,11 +17,11 @@ SAMRateLimit is tested on iOS 6 and requires ARC. It also works on Mac OS X. **F
 } name:@"RefreshTimeline" limit:60.0];
 ```
 
-SAMRateLimit doesn't persist limts across application launches. For most cases, this is ideal. If you need persistence, simply replace `SAMRateLimit` with `SAMPersistedRateLimit` for on disk persistence. Easy as that.
+SAMRateLimit doesn't persist limts across application launches. For most cases, this is ideal. If you need persistence, simply replace `SAMRateLimit` with `SAMPersistentRateLimit` for on disk persistence. Easy as that.
 
 Open up the included [Xcode project](SAMRateLimit.xcodeproj) for an [example app](Example) and [tests](Tests). See the [header](SAMRateLimit/SAMRateLimit.h) for full documentation.
 
 
 ## Installation
 
-Simply add the files in the `SAMRateLimit.h` and `SAMRateLimit.m` to your project or add `SAMRateLimit` to your Podfile if you're using CocoaPods.
+Simply add the files in the `SAMRateLimit` directory to your project or add `SAMRateLimit` to your Podfile if you're using CocoaPods.

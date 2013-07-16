@@ -18,7 +18,6 @@
 		2157FB491794D3B40004E3BE /* SAMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FB401794D3B40004E3BE /* SAMAppDelegate.m */; };
 		2157FB4A1794D3B40004E3BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FB421794D3B40004E3BE /* main.m */; };
 		2157FB4B1794D3B40004E3BE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2157FB451794D3B40004E3BE /* Default-568h@2x.png */; };
-		2157FB531794D3BA0004E3BE /* SAMRateLimitTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2157FB501794D3BA0004E3BE /* SAMRateLimitTests-Info.plist */; };
 		2157FB541794D3BA0004E3BE /* SAMRateLimitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FB521794D3BA0004E3BE /* SAMRateLimitTests.m */; };
 		2157FB5B1794D9F70004E3BE /* SAMExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FB5A1794D9F70004E3BE /* SAMExampleViewController.m */; };
 /* End PBXBuildFile section */
@@ -248,7 +247,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2157FB531794D3BA0004E3BE /* SAMRateLimitTests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

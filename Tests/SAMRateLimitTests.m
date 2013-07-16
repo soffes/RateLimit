@@ -30,4 +30,10 @@
 	STAssertTrue(executed, nil);
 }
 
+
+- (void)testRequiredParameters {
+	STAssertThrows([SAMRateLimit executeBlock:nil name:@"Foo" limit:1.0], nil);
+	STAssertThrows([SAMRateLimit executeBlock:^{} name:nil limit:1.0], nil);
+}
+
 @end

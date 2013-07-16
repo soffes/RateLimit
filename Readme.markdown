@@ -8,6 +8,7 @@ This is really handy for refreshing stuff in `viewDidAppear:` but preventing it 
 
 SAMRateLimit is tested on iOS 6 and requires ARC. It also works on Mac OS X. **Fully thread-safe.** Released under the [MIT license](LICENSE).
 
+
 ## Usage
 
 ``` objc
@@ -16,7 +17,10 @@ SAMRateLimit is tested on iOS 6 and requires ARC. It also works on Mac OS X. **F
 } name:@"RefreshTimeline" limit:60.0];
 ```
 
+SAMRateLimit doesn't persist limts across application launches. For most cases, this is ideal. If you need persistence, simply replace `SAMRateLimit` with `SAMPersistedRateLimit` for on disk persistence. Easy as that.
+
 Open up the included [Xcode project](SAMRateLimit.xcodeproj) for an [example app](Example) and [tests](Tests). See the [header](SAMRateLimit/SAMRateLimit.h) for full documentation.
+
 
 ## Installation
 

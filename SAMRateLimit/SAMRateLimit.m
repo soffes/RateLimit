@@ -10,9 +10,6 @@
 
 @implementation SAMRateLimit
 
-static NSMutableDictionary *_dictionary = nil;
-static dispatch_queue_t _queue = nil;
-
 #pragma mark - Rate Limiting
 
 + (BOOL)executeBlock:(void(^)(void))block name:(NSString *)name limit:(NSTimeInterval)limit {
@@ -21,16 +18,16 @@ static dispatch_queue_t _queue = nil;
     NSParameterAssert(name);
 
 	__block BOOL executeBlock = YES;
-    dispatch_sync([self _queue], ^{
+    dispatch_sync([self queue], ^{
 		// Lookup last executed
-        NSDate *last = [[self _dictionary] objectForKey:name];
+        NSDate *last = [[self dictionary] objectForKey:name];
         NSTimeInterval timeInterval = [last timeIntervalSinceNow];
 
         // If last excuted is less than the limit, don't execute
         if (timeInterval < 0 && fabs(timeInterval) < limit) {
             executeBlock = NO;
         } else {
-			[[self _dictionary] setObject:[NSDate date] forKey:name];
+			[[self dictionary] setObject:[NSDate date] forKey:name];
 		}
 	});
 
@@ -44,36 +41,38 @@ static dispatch_queue_t _queue = nil;
 
 
 + (void)resetLimitForName:(NSString *)name {
-    dispatch_sync([self _queue], ^{
-        [[self _dictionary] removeObjectForKey:name];
+    dispatch_sync([self queue], ^{
+        [[self dictionary] removeObjectForKey:name];
     });
 }
 
 
 + (void)resetAllLimits {
-	dispatch_sync([self _queue], ^{
-        [[self _dictionary] removeAllObjects];
+	dispatch_sync([self queue], ^{
+        [[self dictionary] removeAllObjects];
     });
 }
 
 
 #pragma mark - Private
 
-+ (NSMutableDictionary *)_dictionary {
++ (NSMutableDictionary *)dictionary {
+	static NSMutableDictionary *dictionary = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		_dictionary = [[NSMutableDictionary alloc] init];
+		dictionary = [[NSMutableDictionary alloc] init];
 	});
-	return _dictionary;
+	return dictionary;
 }
 
 
-+ (dispatch_queue_t)_queue {
++ (dispatch_queue_t)queue {
+	static dispatch_queue_t queue = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		_queue = dispatch_queue_create("com.samsoffes.samratelimit", DISPATCH_QUEUE_SERIAL);
+		queue = dispatch_queue_create("com.samsoffes.samratelimit", DISPATCH_QUEUE_SERIAL);
 	});
-	return _queue;
+	return queue;
 }
 
 @end

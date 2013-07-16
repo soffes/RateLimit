@@ -20,6 +20,8 @@
 		2157FB4B1794D3B40004E3BE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2157FB451794D3B40004E3BE /* Default-568h@2x.png */; };
 		2157FB541794D3BA0004E3BE /* SAMRateLimitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FB521794D3BA0004E3BE /* SAMRateLimitTests.m */; };
 		2157FB5B1794D9F70004E3BE /* SAMExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FB5A1794D9F70004E3BE /* SAMExampleViewController.m */; };
+		21D15E261794EEE60023C78F /* SAMPersistentRateLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D15E251794EC6D0023C78F /* SAMPersistentRateLimit.m */; };
+		21D15E271794EEE70023C78F /* SAMPersistentRateLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D15E251794EC6D0023C78F /* SAMPersistentRateLimit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		2157FB521794D3BA0004E3BE /* SAMRateLimitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMRateLimitTests.m; sourceTree = "<group>"; };
 		2157FB591794D9F70004E3BE /* SAMExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMExampleViewController.h; sourceTree = "<group>"; };
 		2157FB5A1794D9F70004E3BE /* SAMExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMExampleViewController.m; sourceTree = "<group>"; };
+		21D15E241794EC6D0023C78F /* SAMPersistentRateLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAMPersistentRateLimit.h; sourceTree = "<group>"; };
+		21D15E251794EC6D0023C78F /* SAMPersistentRateLimit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAMPersistentRateLimit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 			children = (
 				2157FB391794D3AC0004E3BE /* SAMRateLimit.h */,
 				2157FB3A1794D3AC0004E3BE /* SAMRateLimit.m */,
+				21D15E241794EC6D0023C78F /* SAMPersistentRateLimit.h */,
+				21D15E251794EC6D0023C78F /* SAMPersistentRateLimit.m */,
 			);
 			path = SAMRateLimit;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D15E271794EEE70023C78F /* SAMPersistentRateLimit.m in Sources */,
 				2157FB3B1794D3AC0004E3BE /* SAMRateLimit.m in Sources */,
 				2157FB491794D3B40004E3BE /* SAMAppDelegate.m in Sources */,
 				2157FB4A1794D3B40004E3BE /* main.m in Sources */,
@@ -285,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2157FB3C1794D3AC0004E3BE /* SAMRateLimit.m in Sources */,
+				21D15E261794EEE60023C78F /* SAMPersistentRateLimit.m in Sources */,
 				2157FB541794D3BA0004E3BE /* SAMRateLimitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

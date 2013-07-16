@@ -23,7 +23,7 @@
 	__block BOOL executed = NO;
 
 	// It should get excuted first
-    reported = [SAMRateLimit executeBlock:^{
+	reported = [SAMRateLimit executeBlock:^{
 		executed = YES;
 	} name:name limit:1.0];
 	STAssertTrue(reported, nil);
@@ -56,7 +56,7 @@
 	__block BOOL executed = NO;
 
 	// It should get excuted first
-    reported = [SAMRateLimit executeBlock:^{
+	reported = [SAMRateLimit executeBlock:^{
 		executed = YES;
 	} name:name limit:1.0];
 	STAssertTrue(reported, nil);
@@ -92,7 +92,7 @@
 	__block BOOL executed2 = NO;
 
 	// It should get excuted first
-    reported1 = [SAMRateLimit executeBlock:^{
+	reported1 = [SAMRateLimit executeBlock:^{
 		executed1 = YES;
 	} name:name1 limit:1.0];
 	STAssertTrue(reported1, nil);

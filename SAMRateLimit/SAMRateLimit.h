@@ -17,7 +17,7 @@
  @param block The block to be executed. This should not be `nil`.
 
  @param name A string identifying the block. If more than one block have the same name, their last executed time will be
- stored together.
+ stored together. This should not be `nil`.
 
  @param limit The time interval (in seconds). This should be a positive, non-zero value.
 

@@ -8,50 +8,53 @@
 
 #import "SAMRateLimit.h"
 
+static NSMutableDictionary *_dictionary = nil;
+
 @implementation SAMRateLimit
 
++ (void)initialize {
+    if (self = [SAMRateLimit class]) {
+        _dictionary = [[NSMutableDictionary alloc] init];
+    }
+}
+
 + (BOOL)executeBlock:(void(^)(void))block name:(NSString *)name limit:(NSTimeInterval)limit {
-	// Prevent a nil block
-	if (!block) {
-		return NO;
-	}
+    // Prevent nil parameters
+    NSParameterAssert(block);
+    NSParameterAssert(name);
 
-	// Lookup last executed
-	NSMutableDictionary *dictionary = [self dictionary];
-	NSDate *last = [dictionary objectForKey:name];
-	NSTimeInterval timeInterval = [last timeIntervalSinceNow];
+    NSDate *last = nil;
+    @synchronized(self) {
+        // Lookup last executed
+        last = [_dictionary objectForKey:name];
 
-	// If last excuted is less than the limit, don't execute
-	if (timeInterval < 0 && fabs(timeInterval) < limit) {
-		return NO;
-	}
+        NSTimeInterval timeInterval = [last timeIntervalSinceNow];
+
+        // If last excuted is less than the limit, don't execute
+        if (timeInterval < 0 && fabs(timeInterval) < limit) {
+            return NO;
+        }
+
+        [_dictionary setObject:[NSDate date] forKey:name];
+    }
 
 	// Execute
 	block();
-	[dictionary setObject:[NSDate date] forKey:name];
 	return YES;
 }
 
 
 + (void)resetLimitForName:(NSString *)name {
-	[[self dictionary] removeObjectForKey:name];
+    @synchronized(self) {
+        [_dictionary removeObjectForKey:name];
+    }
 }
 
 
 + (void)resetAllLimits {
-  [[self dictionary] removeAllObjects];
-}
-
-
-#pragma mark - Private
-
-+ (NSMutableDictionary *)dictionary {
-	static NSMutableDictionary *dictionary = nil;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		dictionary = [[NSMutableDictionary alloc] init];
-	});
-	return dictionary;
+    @synchronized(self) {
+        [_dictionary removeAllObjects];
+    }
 }
 
 @end

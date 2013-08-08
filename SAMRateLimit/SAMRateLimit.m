@@ -34,6 +34,7 @@
 	// Execute block
 	if (executeBlock) {
 		block();
+    block = nil;
 	}
 
 	return executeBlock;

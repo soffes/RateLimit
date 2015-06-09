@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2194852E1B2771E200DA00B7 /* RateLimitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194852A1B2771D000DA00B7 /* RateLimitTests.m */; };
 		219E73041B27702C004AB616 /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		219E730B1B27702C004AB616 /* RateLimit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219E73001B27702C004AB616 /* RateLimit.framework */; };
 		219E73241B2770CC004AB616 /* PersistentRateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73211B2770CC004AB616 /* PersistentRateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,7 +17,8 @@
 		21CDE00C1B278E34001B8D87 /* PersistentRateLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 219E73221B2770CC004AB616 /* PersistentRateLimit.m */; };
 		21CDE00D1B278E37001B8D87 /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21CDE00E1B278E37001B8D87 /* PersistentRateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73211B2770CC004AB616 /* PersistentRateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21CDE00F1B278E3C001B8D87 /* RateLimitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194852A1B2771D000DA00B7 /* RateLimitTests.m */; };
+		21CDE0161B278F96001B8D87 /* RateLimitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDE0121B278F54001B8D87 /* RateLimitTests.m */; };
+		21CDE0171B278F97001B8D87 /* RateLimitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDE0121B278F54001B8D87 /* RateLimitTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		219485281B2771D000DA00B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2194852A1B2771D000DA00B7 /* RateLimitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateLimitTests.m; sourceTree = "<group>"; };
 		219E73001B27702C004AB616 /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		219E73031B27702C004AB616 /* RateLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RateLimit.h; sourceTree = "<group>"; };
 		219E73051B27702C004AB616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +48,8 @@
 		219E73231B2770CC004AB616 /* RateLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateLimit.m; sourceTree = "<group>"; };
 		21CDDFF41B278DB5001B8D87 /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CDDFFD1B278DB5001B8D87 /* RateLimitTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RateLimitTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CDE0111B278F54001B8D87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21CDE0121B278F54001B8D87 /* RateLimitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateLimitTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				219E73021B27702C004AB616 /* RateLimit */,
+				21CDE0101B278F54001B8D87 /* Tests */,
 				219E73011B27702C004AB616 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,16 +114,15 @@
 				219E73211B2770CC004AB616 /* PersistentRateLimit.h */,
 				219E73221B2770CC004AB616 /* PersistentRateLimit.m */,
 				219E73051B27702C004AB616 /* Info.plist */,
-				219E731A1B277065004AB616 /* Tests */,
 			);
 			path = RateLimit;
 			sourceTree = "<group>";
 		};
-		219E731A1B277065004AB616 /* Tests */ = {
+		21CDE0101B278F54001B8D87 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				219485281B2771D000DA00B7 /* Info.plist */,
-				2194852A1B2771D000DA00B7 /* RateLimitTests.m */,
+				21CDE0111B278F54001B8D87 /* Info.plist */,
+				21CDE0121B278F54001B8D87 /* RateLimitTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2194852E1B2771E200DA00B7 /* RateLimitTests.m in Sources */,
+				21CDE0171B278F97001B8D87 /* RateLimitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21CDE00F1B278E3C001B8D87 /* RateLimitTests.m in Sources */,
+				21CDE0161B278F96001B8D87 /* RateLimitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +385,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -427,7 +428,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -480,7 +482,7 @@
 		219E73181B27702C004AB616 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = RateLimit/Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.RateLimitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,7 +493,7 @@
 		219E73191B27702C004AB616 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = RateLimit/Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.RateLimitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -551,7 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = RateLimit/Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.RateLimitTests;
@@ -565,7 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = RateLimit/Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.RateLimitTests;
@@ -612,6 +614,7 @@
 				21CDE0071B278DB5001B8D87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21CDE0081B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimitTests-OSX" */ = {
 			isa = XCConfigurationList;
@@ -620,6 +623,7 @@
 				21CDE00A1B278DB5001B8D87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

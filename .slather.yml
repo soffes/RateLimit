@@ -1,0 +1,4 @@
+coverage_service: coveralls
+xcodeproj: RateLimit.xcodeproj
+ignore:
+  - Tests/*

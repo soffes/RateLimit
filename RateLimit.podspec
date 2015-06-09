@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
   s.license = { :type => 'MIT', :file => 'LICENSE' }
 
   s.frameworks = 'Foundation'
-  s.source_files = 'RateLimit/*.{h,m,swift}'
+  s.source_files = 'RateLimit/**/*.{h,m,swift}'
 end

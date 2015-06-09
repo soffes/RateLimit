@@ -1,5 +1,7 @@
 # Rate Limit
 
+[![Version](https://img.shields.io/github/release/soffes/RateLimit.svg)](https://github.com/soffes/RateLimit/releases) [![Build Status](https://travis-ci.org/soffes/RateLimit.svg?branch=master)](https://travis-ci.org/soffes/RateLimit) [![Coverage Status](https://coveralls.io/repos/soffes/RateLimit/badge.svg?branch=master)](https://coveralls.io/r/soffes/RateLimit?branch=master) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/RateLimit.svg)](https://cocoapods.org/pods/RateLimit)
+
 Simple utility for only executing code every so often.
 
 This will only execute the block passed for a given `name` if the last time it was called is greater than `limit` or it has never been called.

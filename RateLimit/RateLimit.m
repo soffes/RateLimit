@@ -1,14 +1,14 @@
 //
-//  SAMRateLimit.m
-//  SAMRateLimit
+//  RateLimit.m
+//  RateLimit
 //
 //  Created by Sam Soffes on 4/9/12.
-//  Copyright (c) 2012-2013 Sam Soffes. All rights reserved.
+//  Copyright © 2012-2015 Sam Soffes. All rights reserved.
 //
 
-#import "SAMRateLimit.h"
+#import "RateLimit.h"
 
-@implementation SAMRateLimit
+@implementation RateLimit
 
 #pragma mark - Rate Limiting
 

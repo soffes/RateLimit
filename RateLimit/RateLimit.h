@@ -1,19 +1,26 @@
 //
-//  SAMRateLimit.h
-//  SAMRateLimit
+//  RateLimit.h
+//  RateLimit
 //
 //  Created by Sam Soffes on 4/9/12.
-//  Copyright (c) 2012-2013 Sam Soffes. All rights reserved.
+//  Copyright © 2012-2015 Sam Soffes. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
+//! Project version number for RateLimit.
+FOUNDATION_EXPORT double RateLimitVersionNumber;
+
+//! Project version string for RateLimit.
+FOUNDATION_EXPORT const unsigned char RateLimitVersionString[];
+
 
 /**
  Simple utility for only executing code every so often.
- 
+
  All access to this class is thread-safe.
  */
-@interface SAMRateLimit : NSObject
+@interface RateLimit : NSObject
 
 /**
  Executes the given block. If the block has been executed in less time than the limit, it will not be executed.

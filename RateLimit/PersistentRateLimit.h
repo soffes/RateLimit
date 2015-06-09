@@ -1,12 +1,12 @@
 //
-//  SAMPersistentRateLimit.h
-//  SAMRateLimit
+//  PersistentRateLimit.h
+//  RateLimit
 //
 //  Created by Sam Soffes on 7/15/13.
-//  Copyright (c) 2013 Sam Soffes. All rights reserved.
+//  Copyright © 2013-2015 Sam Soffes. All rights reserved.
 //
 
-#import "SAMRateLimit.h"
+#import "RateLimit.h"
 
 /**
  Simple utility for only executing code every so often.
@@ -16,5 +16,5 @@
  This class has the same funtionality as `SAMRateLimit` only times are presisted across application launches. The limits
  are separate from non-persisted version.
  */
-@interface SAMPersistentRateLimit : SAMRateLimit
+@interface PersistentRateLimit : RateLimit
 @end

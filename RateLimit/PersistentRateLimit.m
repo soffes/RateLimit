@@ -1,18 +1,18 @@
 //
-//  SAMPersistentRateLimit.m
-//  SAMRateLimit
+//  PersistentRateLimit.m
+//  RateLimit
 //
 //  Created by Sam Soffes on 7/15/13.
-//  Copyright (c) 2013 Sam Soffes. All rights reserved.
+//  Copyright © 2013-2015 Sam Soffes. All rights reserved.
 //
 
-#import "SAMPersistentRateLimit.h"
+#import "PersistentRateLimit.h"
 
-@interface SAMRateLimit (Private)
+@interface RateLimit (Private)
 + (dispatch_queue_t)queue;
 @end
 
-@implementation SAMPersistentRateLimit
+@implementation PersistentRateLimit
 
 + (BOOL)executeBlock:(void(^)(void))block name:(NSString *)name limit:(NSTimeInterval)limit {
 	BOOL result = [super executeBlock:block name:name limit:limit];

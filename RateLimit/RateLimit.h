@@ -14,7 +14,6 @@ FOUNDATION_EXPORT double RateLimitVersionNumber;
 //! Project version string for RateLimit.
 FOUNDATION_EXPORT const unsigned char RateLimitVersionString[];
 
-
 #ifndef NS_ASSUME_NONNULL_BEGIN
 #define NS_ASSUME_NONNULL_BEGIN
 #endif
@@ -69,3 +68,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#import <RateLimit/PersistentRateLimit.h>

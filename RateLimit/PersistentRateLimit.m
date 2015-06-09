@@ -15,6 +15,9 @@
 @implementation PersistentRateLimit
 
 + (BOOL)executeBlock:(void(^)(void))block name:(NSString *)name limit:(NSTimeInterval)limit {
+	NSParameterAssert(block);
+	NSParameterAssert(name);
+
 	BOOL result = [super executeBlock:block name:name limit:limit];
 	[self writeDictionary];
 	return result;
@@ -22,6 +25,8 @@
 
 
 + (void)resetLimitForName:(NSString *)name {
+	NSParameterAssert(name);
+	
 	[super resetLimitForName:name];
 	[self writeDictionary];
 }

@@ -15,6 +15,16 @@ FOUNDATION_EXPORT double RateLimitVersionNumber;
 FOUNDATION_EXPORT const unsigned char RateLimitVersionString[];
 
 
+#ifndef NS_ASSUME_NONNULL_BEGIN
+#define NS_ASSUME_NONNULL_BEGIN
+#endif
+
+#ifndef NS_ASSUME_NONNULL_END
+#define NS_ASSUME_NONNULL_END
+#endif
+
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Simple utility for only executing code every so often.
 
@@ -57,3 +67,5 @@ FOUNDATION_EXPORT const unsigned char RateLimitVersionString[];
 + (void)resetAllLimits;
 
 @end
+
+NS_ASSUME_NONNULL_END

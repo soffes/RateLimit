@@ -42,6 +42,8 @@
 
 
 + (void)resetLimitForName:(NSString *)name {
+	NSParameterAssert(name);
+	
 	dispatch_sync([self queue], ^{
 		[[self dictionary] removeObjectForKey:name];
 	});

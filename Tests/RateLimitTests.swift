@@ -14,33 +14,31 @@ class RateLimitTests: XCTestCase {
     func testLimit() {
         let name = "TestLimit"
         var reported = false
-        var executed = false
+        let expectation1 = expectationWithDescription("Execute 1")
 
         // It should get excuted first
         reported = RateLimit.execute(name: name, limit: 1) {
-            executed = true
+            expectation1.fulfill()
         }
         XCTAssertTrue(reported)
-        XCTAssertTrue(executed)
+        waitForExpectationsWithTimeout(0, handler: nil)
 
         // Not right away after
-        executed = false
         reported = RateLimit.execute(name: name, limit: 1) {
-            executed = true
+            XCTFail("This shouldn't have run.")
         }
         XCTAssertFalse(reported)
-        XCTAssertFalse(executed)
 
         // Sleep for a second
         sleep(1)
 
         // Now it should get executed
-        executed = false
+        let expectation2 = expectationWithDescription("Execute 2")
         reported = RateLimit.execute(name: name, limit: 1) {
-            executed = true
+            expectation2.fulfill()
         }
         XCTAssertTrue(reported)
-        XCTAssertTrue(executed)
+        waitForExpectationsWithTimeout(0, handler: nil)
     }
 
 

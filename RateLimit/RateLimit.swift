@@ -10,6 +10,7 @@ import Foundation
 
 @objc public class RateLimit {
 
+    // TODO: Add @noescape
     public class func execute(name name: String, limit: NSTimeInterval, block: dispatch_block_t) -> Bool {
         var should: Bool = false
         dispatch_sync(queue) {
@@ -42,17 +43,20 @@ import Foundation
     private static var dictionary = [String: NSDate]()
 
     private class func shouldExecute(name name: String, limit: NSTimeInterval) -> Bool {
-        // Lookup last executed
-        guard let lastExecutedAt = dictionary[name] else { return true }
-        let timeInterval = lastExecutedAt.timeIntervalSinceNow
+        let should: Bool
 
-        // If last excuted is less than the limit, don't execute
-        if timeInterval < 0 && abs(timeInterval) < limit {
-            return false
+        // Lookup last executed
+        if let lastExecutedAt = dictionary[name] {
+            let timeInterval = lastExecutedAt.timeIntervalSinceNow
+
+            // If last excuted is less than the limit, don't execute
+            should = !(timeInterval < 0 && abs(timeInterval) < limit)
+        } else {
+            should = true
         }
 
         // Record execution
         dictionary[name] = NSDate()
-        return true
+        return should
     }
 }

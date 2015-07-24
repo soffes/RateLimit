@@ -12,12 +12,11 @@ import RateLimit
 class RateLimitTests: XCTestCase {
 
     func testLimit() {
-        let name = "TestLimit"
-        var reported = false
-        let expectation1 = expectationWithDescription("Execute 1")
+        let name = "testLimit"
 
         // It should get excuted first
-        reported = RateLimit.execute(name: name, limit: 1) {
+        let expectation1 = expectationWithDescription("Execute 1")
+        var reported = RateLimit.execute(name: name, limit: 1) {
             expectation1.fulfill()
         }
         XCTAssertTrue(reported)
@@ -42,39 +41,36 @@ class RateLimitTests: XCTestCase {
     }
 
 
-//    - (void)testResetting {
-//        NSString *const name = @"TestResetting";
-//        BOOL reported = NO;
-//        __block BOOL executed = NO;
-//
-//        // It should get excuted first
-//        reported = [RateLimit executeBlock:^{
-//            executed = YES;
-//        } name:name limit:1.0];
-//        XCTAssertTrue(reported);
-//        XCTAssertTrue(executed);
-//
-//        // Not right away after
-//        executed = NO;
-//        reported = [RateLimit executeBlock:^{
-//            executed = YES;
-//        } name:name limit:1.0];
-//        XCTAssertFalse(reported);
-//        XCTAssertFalse(executed);
-//
-//        // Reset limit
-//        [RateLimit resetLimitForName:name];
-//
-//        // Now it should get executed
-//        executed = NO;
-//        reported = [RateLimit executeBlock:^{
-//            executed = YES;
-//        } name:name limit:1.0];
-//        XCTAssertTrue(reported);
-//        XCTAssertTrue(executed);
-//    }
-//
-//
+    func testResetting() {
+        let name = "testResetting"
+
+        // It should get excuted first
+        let expectation1 = expectationWithDescription("Execute 1")
+        var reported = RateLimit.execute(name: name, limit: 1) {
+            expectation1.fulfill()
+        }
+        XCTAssertTrue(reported)
+        waitForExpectationsWithTimeout(0, handler: nil)
+
+        // Not right away after
+        reported = RateLimit.execute(name: name, limit: 1) {
+            XCTFail("This shouldn't have run.")
+        }
+        XCTAssertFalse(reported)
+
+        // Reset limit
+        RateLimit.resetLimitForName(name)
+
+        // Now it should get executed
+        let expectation2 = expectationWithDescription("Execute 2")
+        reported = RateLimit.execute(name: name, limit: 1) {
+            expectation2.fulfill()
+        }
+        XCTAssertTrue(reported)
+        waitForExpectationsWithTimeout(0, handler: nil)
+    }
+
+
 //    - (void)testResettingAll {
 //        NSString *const name1 = @"TestResettingAll1";
 //        NSString *const name2 = @"TestResettingAll2";

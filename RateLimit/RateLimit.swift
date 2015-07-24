@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class RateLimit {
+public class RateLimit: NSObject {
 
     // TODO: Add @noescape
     public class func execute(name name: String, limit: NSTimeInterval, block: dispatch_block_t) -> Bool {

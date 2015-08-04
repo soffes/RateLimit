@@ -34,7 +34,7 @@
 	// Execute block
 	if (executeBlock) {
 		block();
-    block = nil;
+		block = nil;
 	}
 
 	return executeBlock;
@@ -43,7 +43,7 @@
 
 + (void)resetLimitForName:(NSString *)name {
 	NSParameterAssert(name);
-	
+
 	dispatch_sync([self queue], ^{
 		[[self dictionary] removeObjectForKey:name];
 	});

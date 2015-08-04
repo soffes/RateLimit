@@ -23,7 +23,7 @@
 		NSDate *last = [[self dictionary] objectForKey:name];
 		NSTimeInterval timeInterval = [last timeIntervalSinceNow];
 
-		// If last excuted is less than the limit, don't execute
+		// If last executed is less than the limit, don't execute
 		if (timeInterval < 0 && fabs(timeInterval) < limit) {
 			executeBlock = NO;
 		} else {
@@ -34,7 +34,7 @@
 	// Execute block
 	if (executeBlock) {
 		block();
-    block = nil;
+		block = nil;
 	}
 
 	return executeBlock;
@@ -43,7 +43,7 @@
 
 + (void)resetLimitForName:(NSString *)name {
 	NSParameterAssert(name);
-	
+
 	dispatch_sync([self queue], ^{
 		[[self dictionary] removeObjectForKey:name];
 	});

@@ -26,7 +26,7 @@
 
 + (void)resetLimitForName:(NSString *)name {
 	NSParameterAssert(name);
-	
+
 	[super resetLimitForName:name];
 	[self writeDictionary];
 }

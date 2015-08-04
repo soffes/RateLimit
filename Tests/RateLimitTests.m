@@ -25,7 +25,7 @@
 	BOOL reported = NO;
 	__block BOOL executed = NO;
 
-	// It should get excuted first
+	// It should get executed first
 	reported = [RateLimit executeBlock:^{
 		executed = YES;
 	} name:name limit:1.0];
@@ -58,7 +58,7 @@
 	BOOL reported = NO;
 	__block BOOL executed = NO;
 
-	// It should get excuted first
+	// It should get executed first
 	reported = [RateLimit executeBlock:^{
 		executed = YES;
 	} name:name limit:1.0];
@@ -94,7 +94,7 @@
 	__block BOOL executed1 = NO;
 	__block BOOL executed2 = NO;
 
-	// It should get excuted first
+	// It should get executed first
 	reported1 = [RateLimit executeBlock:^{
 		executed1 = YES;
 	} name:name1 limit:1.0];

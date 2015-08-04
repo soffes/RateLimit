@@ -23,7 +23,7 @@
 		NSDate *last = [[self dictionary] objectForKey:name];
 		NSTimeInterval timeInterval = [last timeIntervalSinceNow];
 
-		// If last excuted is less than the limit, don't execute
+		// If last executed is less than the limit, don't execute
 		if (timeInterval < 0 && fabs(timeInterval) < limit) {
 			executeBlock = NO;
 		} else {

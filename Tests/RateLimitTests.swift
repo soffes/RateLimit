@@ -40,7 +40,6 @@ class RateLimitTests: XCTestCase {
         waitForExpectationsWithTimeout(0, handler: nil)
     }
 
-
     func testResetting() {
         let name = "testResetting"
 
@@ -53,76 +52,66 @@ class RateLimitTests: XCTestCase {
         waitForExpectationsWithTimeout(0, handler: nil)
 
         // Not right away after
-        reported = RateLimit.execute(name: name, limit: 1) {
+        let reported1 = RateLimit.execute(name: name, limit: 1) {
             XCTFail("This shouldn't have run.")
         }
-        XCTAssertFalse(reported)
+        XCTAssertFalse(reported1)
 
         // Reset limit
         RateLimit.resetLimitForName(name)
 
         // Now it should get executed
         let expectation2 = expectationWithDescription("Execute 2")
-        reported = RateLimit.execute(name: name, limit: 1) {
+        let reported2 = RateLimit.execute(name: name, limit: 1) {
             expectation2.fulfill()
         }
-        XCTAssertTrue(reported)
+        XCTAssertTrue(reported2)
         waitForExpectationsWithTimeout(0, handler: nil)
     }
 
+	func testResettingAll() {
+        // It should get excuted first
+		let name1 = "TestResettingAll1"
+		let expecation1 = expectationWithDescription("Execute 1")
+		let reported1 = RateLimit.execute(name: name1, limit: 1) {
+			expecation1.fulfill()
+		}
+		XCTAssertTrue(reported1)
 
-//    - (void)testResettingAll {
-//        NSString *const name1 = @"TestResettingAll1";
-//        NSString *const name2 = @"TestResettingAll2";
-//        BOOL reported1 = NO;
-//        BOOL reported2 = NO;
-//        __block BOOL executed1 = NO;
-//        __block BOOL executed2 = NO;
-//
-//        // It should get excuted first
-//        reported1 = [RateLimit executeBlock:^{
-//            executed1 = YES;
-//        } name:name1 limit:1.0];
-//        XCTAssertTrue(reported1);
-//        XCTAssertTrue(executed1);
-//
-//        reported2 = [RateLimit executeBlock:^{
-//            executed2 = YES;
-//        } name:name2 limit:1.0];
-//        XCTAssertTrue(reported2);
-//        XCTAssertTrue(executed2);
-//
-//        // Not right away after
-//        executed1 = NO;
-//        reported1 = [RateLimit executeBlock:^{
-//            executed1 = YES;
-//        } name:name1 limit:1.0];
-//        XCTAssertFalse(reported1);
-//        XCTAssertFalse(executed1);
-//
-//        executed2 = NO;
-//        reported2 = [RateLimit executeBlock:^{
-//            executed2 = YES;
-//        } name:name2 limit:1.0];
-//        XCTAssertFalse(reported2);
-//        XCTAssertFalse(executed2);
-//
-//        // Reset limit
-//        [RateLimit resetAllLimits];
-//
-//        // Now it should get executed
-//        executed1 = NO;
-//        reported1 = [RateLimit executeBlock:^{
-//            executed1 = YES;
-//        } name:name1 limit:1.0];
-//        XCTAssertTrue(reported1);
-//        XCTAssertTrue(executed1);
-//
-//        executed2 = NO;
-//        reported2 = [RateLimit executeBlock:^{
-//            executed2 = YES;
-//        } name:name2 limit:1.0];
-//        XCTAssertTrue(reported2);
-//        XCTAssertTrue(executed2);
-//    }
+		let name2 = "TestResettingAll2"
+		let expecation2 = expectationWithDescription("Execute 2")
+		let reported2 = RateLimit.execute(name: name2, limit: 1) {
+            expecation2.fulfill()
+        }
+        XCTAssertTrue(reported2)
+
+        // Not right away after
+		let reported3 = RateLimit.execute(name: name1, limit: 1) {
+            XCTFail("This shouldn't have run.")
+        }
+        XCTAssertFalse(reported3)
+
+		let reported4 = RateLimit.execute(name: name2, limit: 1) {
+            XCTFail("This shouldn't have run.")
+        }
+        XCTAssertFalse(reported4)
+
+        // Reset limit
+        RateLimit.resetAllLimits()
+
+        // Now it should get executed
+		let expectation3 = expectationWithDescription("Execute 3")
+		let reported5 = RateLimit.execute(name: name1, limit: 1) {
+            expectation3.fulfill()
+        }
+        XCTAssertTrue(reported5)
+
+        let expectation4 = expectationWithDescription("Execute 4")
+		let reported6 = RateLimit.execute(name: name2, limit: 1) {
+            expectation4.fulfill()
+        }
+        XCTAssertTrue(reported6)
+
+		waitForExpectationsWithTimeout(1, handler: nil)
+    }
 }

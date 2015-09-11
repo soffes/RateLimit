@@ -18,6 +18,18 @@ are separate from non-persisted version.
 */
 public class PersistentRateLimit: RateLimit {
 
+	// MARK: - RateLimit
+
+	public override class func resetAllLimits() {
+		super.resetAllLimits()
+
+		guard let fileURL = fileURL else { return }
+		do {
+			try NSFileManager.defaultManager().removeItemAtURL(fileURL)
+		} catch {}
+	}
+
+
 	// MARK: - Private
 
 	private static let fileURL: NSURL? = {

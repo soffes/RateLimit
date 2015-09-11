@@ -10,12 +10,6 @@ end
 
 task :default => :test
 
-desc 'Print test coverage of the last test run.'
-task :coverage do
-  require_binary 'slather', 'bundle install'
-  sh 'slather coverage -s'
-end
-
 
 private
 

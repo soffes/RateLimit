@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		217375241BA278DE0033461F /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		217375251BA278DE0033461F /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* RateLimit.swift */; settings = {ASSET_TAGS = (); }; };
+		2173752D1BA2791E0033461F /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173752C1BA2791E0033461F /* PersistentRateLimit.swift */; settings = {ASSET_TAGS = (); }; };
+		2173752E1BA2791E0033461F /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173752C1BA2791E0033461F /* PersistentRateLimit.swift */; settings = {ASSET_TAGS = (); }; };
+		2173752F1BA2791E0033461F /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173752C1BA2791E0033461F /* PersistentRateLimit.swift */; settings = {ASSET_TAGS = (); }; };
 		219E73041B27702C004AB616 /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		219E730B1B27702C004AB616 /* RateLimit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219E73001B27702C004AB616 /* RateLimit.framework */; };
 		21B1083B1B279A4F003693A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1083A1B279A4F003693A7 /* AppDelegate.swift */; };
@@ -40,12 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2173751C1BA278BF0033461F /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2173752C1BA2791E0033461F /* PersistentRateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentRateLimit.swift; sourceTree = "<group>"; };
 		219E73001B27702C004AB616 /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		219E73031B27702C004AB616 /* RateLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RateLimit.h; sourceTree = "<group>"; };
 		219E73051B27702C004AB616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		219E730A1B27702C004AB616 /* RateLimitTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RateLimitTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		219E73211B2770CC004AB616 /* PersistentRateLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentRateLimit.h; sourceTree = "<group>"; };
-		219E73221B2770CC004AB616 /* PersistentRateLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentRateLimit.m; sourceTree = "<group>"; };
 		21B108381B279A4F003693A7 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B1083A1B279A4F003693A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B1083C1B279A4F003693A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		217375181BA278BF0033461F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		219E72FC1B27702C004AB616 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,6 +131,7 @@
 				21CDDFF41B278DB5001B8D87 /* RateLimit.framework */,
 				21CDDFFD1B278DB5001B8D87 /* RateLimitTests-OSX.xctest */,
 				21B108381B279A4F003693A7 /* Example.app */,
+				2173751C1BA278BF0033461F /* RateLimit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,8 +141,7 @@
 			children = (
 				219E73031B27702C004AB616 /* RateLimit.h */,
 				36C08FD91B28EC85005DDE76 /* RateLimit.swift */,
-				219E73211B2770CC004AB616 /* PersistentRateLimit.h */,
-				219E73221B2770CC004AB616 /* PersistentRateLimit.m */,
+				2173752C1BA2791E0033461F /* PersistentRateLimit.swift */,
 				219E73051B27702C004AB616 /* Info.plist */,
 			);
 			path = RateLimit;
@@ -160,6 +172,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		217375191BA278BF0033461F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				217375241BA278DE0033461F /* RateLimit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		219E72FD1B27702C004AB616 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +199,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		2173751B1BA278BF0033461F /* RateLimit-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 217375211BA278BF0033461F /* Build configuration list for PBXNativeTarget "RateLimit-watchOS" */;
+			buildPhases = (
+				217375171BA278BF0033461F /* Sources */,
+				217375181BA278BF0033461F /* Frameworks */,
+				217375191BA278BF0033461F /* Headers */,
+				2173751A1BA278BF0033461F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RateLimit-watchOS";
+			productName = "RateLimit-watchOS";
+			productReference = 2173751C1BA278BF0033461F /* RateLimit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		219E72FF1B27702C004AB616 /* RateLimit-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 219E73141B27702C004AB616 /* Build configuration list for PBXNativeTarget "RateLimit-iOS" */;
@@ -278,6 +316,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Sam Soffes";
 				TargetAttributes = {
+					2173751B1BA278BF0033461F = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					219E72FF1B27702C004AB616 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -313,11 +354,19 @@
 				219E73091B27702C004AB616 /* RateLimitTests-iOS */,
 				21CDDFF31B278DB5001B8D87 /* RateLimit-OSX */,
 				21CDDFFC1B278DB5001B8D87 /* RateLimitTests-OSX */,
+				2173751B1BA278BF0033461F /* RateLimit-watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2173751A1BA278BF0033461F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		219E72FE1B27702C004AB616 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,11 +408,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		217375171BA278BF0033461F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				217375251BA278DE0033461F /* RateLimit.swift in Sources */,
+				2173752F1BA2791E0033461F /* PersistentRateLimit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		219E72FB1B27702C004AB616 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				36C08FDA1B28EC85005DDE76 /* RateLimit.swift in Sources */,
+				2173752D1BA2791E0033461F /* PersistentRateLimit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36C08FDB1B28EC85005DDE76 /* RateLimit.swift in Sources */,
+				2173752E1BA2791E0033461F /* PersistentRateLimit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +487,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		217375221BA278BF0033461F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RateLimit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ratelimit;
+				PRODUCT_NAME = RateLimit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		217375231BA278BF0033461F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RateLimit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.ratelimit;
+				PRODUCT_NAME = RateLimit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		219E73121B27702C004AB616 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -699,6 +797,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		217375211BA278BF0033461F /* Build configuration list for PBXNativeTarget "RateLimit-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				217375221BA278BF0033461F /* Debug */,
+				217375231BA278BF0033461F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		219E72FA1B27702C004AB616 /* Build configuration list for PBXProject "RateLimit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -13,5 +13,3 @@ FOUNDATION_EXPORT double RateLimitVersionNumber;
 
 //! Project version string for RateLimit.
 FOUNDATION_EXPORT const unsigned char RateLimitVersionString[];
-
-//#import <RateLimit/PersistentRateLimit.h>

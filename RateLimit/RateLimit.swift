@@ -39,8 +39,16 @@ public class RateLimit: NSObject {
 
     // MARK: - Private
 
-    private static let queue = dispatch_queue_create("com.samsoffes.ratelimit", DISPATCH_QUEUE_SERIAL)
-    private static var dictionary = [String: NSDate]()
+    static let queue = dispatch_queue_create("com.samsoffes.ratelimit", DISPATCH_QUEUE_SERIAL)
+	static var dictionary = [String: NSDate]() {
+		didSet {
+			didChangeDictionary()
+		}
+	}
+
+	class func didChangeDictionary() {
+		// Do nothing
+	}
 
     private class func shouldExecute(name name: String, limit: NSTimeInterval) -> Bool {
         let should: Bool

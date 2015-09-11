@@ -1,12 +1,13 @@
-Pod::Spec.new do |s|
-  s.name = 'RateLimit'
-  s.version = '1.0.0'
-  s.authors = {'Sam Soffes' => 'sam@soff.es'}
-  s.homepage = 'https://github.com/soffes/RateLimit'
-  s.summary = 'Simple utility for only executing code every so often.'
-  s.source = {:git => 'https://github.com/soffes/RateLimit.git', :tag => "v#{s.version}"}
-  s.license = { :type => 'MIT', :file => 'LICENSE' }
+Pod::Spec.new do |spec|
+  spec.name = 'RateLimit'
+  spec.version = '1.1.0'
+  spec.authors = {'Sam Soffes' => 'sam@soff.es'}
+  spec.homepage = 'https://github.com/soffes/RateLimit'
+  spec.summary = 'Simple utility for only executing code every so often.'
+  spec.source = {:git => 'https://github.com/soffes/RateLimit.git', :tag => "v#{spec.version}"}
+  spec.license = { :type => 'MIT', :file => 'LICENSE' }
 
-  s.frameworks = 'Foundation'
-  s.source_files = 'RateLimit/**/*.{h,m,swift}'
+  spec.platform = :ios, '8.0'
+  spec.frameworks = 'Foundation'
+  spec.source_files = 'RateLimit/**/*.{h,m,swift}'
 end

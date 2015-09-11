@@ -804,6 +804,7 @@
 				217375231BA278BF0033461F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		219E72FA1B27702C004AB616 /* Build configuration list for PBXProject "RateLimit" */ = {
 			isa = XCConfigurationList;

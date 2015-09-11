@@ -45,27 +45,27 @@ class RateLimitTests: XCTestCase {
 
         // It should get excuted first
         let expectation1 = expectationWithDescription("Execute 1")
-        var reported = RateLimit.execute(name: name, limit: 1) {
+        let reported1 = RateLimit.execute(name: name, limit: 1) {
             expectation1.fulfill()
         }
-        XCTAssertTrue(reported)
+        XCTAssertTrue(reported1)
         waitForExpectationsWithTimeout(0, handler: nil)
 
         // Not right away after
-        let reported1 = RateLimit.execute(name: name, limit: 1) {
+        let reported2 = RateLimit.execute(name: name, limit: 1) {
             XCTFail("This shouldn't have run.")
         }
-        XCTAssertFalse(reported1)
+        XCTAssertFalse(reported2)
 
         // Reset limit
         RateLimit.resetLimitForName(name)
 
         // Now it should get executed
         let expectation2 = expectationWithDescription("Execute 2")
-        let reported2 = RateLimit.execute(name: name, limit: 1) {
+        let reported3 = RateLimit.execute(name: name, limit: 1) {
             expectation2.fulfill()
         }
-        XCTAssertTrue(reported2)
+        XCTAssertTrue(reported3)
         waitForExpectationsWithTimeout(0, handler: nil)
     }
 

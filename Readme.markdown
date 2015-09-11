@@ -13,15 +13,15 @@ Rate Limit is **fully thread-safe.** Released under the [MIT license](LICENSE).
 
 ## Usage
 
-``` objc
-[RateLimit executeBlock:^{
+``` swift
+RateLimit.execute(name: "RefreshTimeline", limit: 60) {
     // Do some work that runs a maximum of once per minute
-} name:@"RefreshTimeline" limit:60.0];
+}
 ```
 
 Rate Limit doesn't persist limts across application launches. For most cases, this is ideal. If you need persistence, simply replace `RateLimit` with `PersistentRateLimit` for on disk persistence. Easy as that.
 
-Open up the included [Xcode project](RateLimit.xcodeproj) for an [example app](Example) and [tests](Tests). See the [header](RateLimit/SAMRateLimit.h) for full documentation.
+Open up the included [Xcode project](RateLimit.xcodeproj) for an [example app](Example) and [tests](Tests). See the [code](RateLimit/RateLimit.swift) for full documentation.
 
 
 ## Installation

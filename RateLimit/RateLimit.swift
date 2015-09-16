@@ -61,9 +61,7 @@ public class RateLimit: NSObject {
 			}
 
 			// Record execution
-			if should {
-				dictionary[name] = NSDate()
-			}
+			dictionary[name] = NSDate()
 		}
 		
         return should

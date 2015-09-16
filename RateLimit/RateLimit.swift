@@ -10,18 +10,13 @@ import Foundation
 
 public class RateLimit: NSObject {
 
-    // TODO: Add @noescape
-    public class func execute(name name: String, limit: NSTimeInterval, block: dispatch_block_t) -> Bool {
-        var should: Bool = false
-        dispatch_sync(queue) {
-            should = shouldExecute(name: name, limit: limit)
-        }
-
-        if should {
+    public class func execute(name name: String, limit: NSTimeInterval, @noescape block: Void -> ()) -> Bool {
+        if shouldExecute(name: name, limit: limit) {
             block()
+			return true
         }
 
-        return should
+        return false
     }
 
     public class func resetLimitForName(name: String) {
@@ -40,6 +35,7 @@ public class RateLimit: NSObject {
     // MARK: - Private
 
     static let queue = dispatch_queue_create("com.samsoffes.ratelimit", DISPATCH_QUEUE_SERIAL)
+
 	static var dictionary = [String: NSDate]() {
 		didSet {
 			didChangeDictionary()
@@ -51,21 +47,23 @@ public class RateLimit: NSObject {
 	}
 
     private class func shouldExecute(name name: String, limit: NSTimeInterval) -> Bool {
-        let should: Bool
+		var should = false
 
-        // Lookup last executed
-        if let lastExecutedAt = dictionary[name] {
-            let timeInterval = lastExecutedAt.timeIntervalSinceNow
+		dispatch_sync(queue) {
+			// Lookup last executed
+			if let lastExecutedAt = dictionary[name] {
+				let timeInterval = lastExecutedAt.timeIntervalSinceNow
 
-            // If last excuted is less than the limit, don't execute
-            should = !(timeInterval < 0 && abs(timeInterval) < limit)
-        } else {
-            should = true
-        }
+				// If last excuted is less than the limit, don't execute
+				should = !(timeInterval < 0 && abs(timeInterval) < limit)
+			} else {
+				should = true
+			}
 
-        // Record execution
-		if should {
-			dictionary[name] = NSDate()
+			// Record execution
+			if should {
+				dictionary[name] = NSDate()
+			}
 		}
 		
         return should

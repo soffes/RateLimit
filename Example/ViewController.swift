@@ -19,8 +19,8 @@ class ViewController: UIViewController {
 	// MARK: - Actions
 
 	@IBAction func execute(sender: AnyObject?) {
-		RateLimit.executeBlock({
-			self.textLabel.text = NSDate().description
-		}, name: "Example", limit: 3)
+		RateLimit.execute(name: "Example", limit: 1) {
+			textLabel.text = NSDate().description
+		}
 	}
 }

@@ -23,7 +23,7 @@ class RateLimitTests: XCTestCase {
         waitForExpectationsWithTimeout(0, handler: nil)
 
         // Not right away after
-        reported = RateLimit.execute(name: name, limit: 2) {
+        reported = RateLimit.execute(name: name, limit: 1) {
             XCTFail("This shouldn't have run.")
         }
         XCTAssertFalse(reported)
@@ -31,18 +31,9 @@ class RateLimitTests: XCTestCase {
 		// Sleep for a second
 		sleep(1)
 
-		// Not 1 second after
-		reported = RateLimit.execute(name: name, limit: 2) {
-			XCTFail("This shouldn't have run.")
-		}
-		XCTAssertFalse(reported)
-
-        // Sleep for a second
-        sleep(1)
-
         // Now it should get executed
         let expectation2 = expectationWithDescription("Execute 2")
-        reported = RateLimit.execute(name: name, limit: 2) {
+        reported = RateLimit.execute(name: name, limit: 1) {
             expectation2.fulfill()
         }
         XCTAssertTrue(reported)

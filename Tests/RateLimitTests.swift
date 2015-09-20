@@ -13,27 +13,36 @@ class RateLimitTests: XCTestCase {
 
     func testLimit() {
         let name = "testLimit"
+        let limit : NSTimeInterval = 5.0
 
         // It should get excuted first
         let expectation1 = expectationWithDescription("Execute 1")
-        var reported = RateLimit.execute(name: name, limit: 2) {
+        var reported = RateLimit.execute(name: name, limit: limit) {
             expectation1.fulfill()
         }
         XCTAssertTrue(reported)
         waitForExpectationsWithTimeout(0, handler: nil)
 
         // Not right away after
-        reported = RateLimit.execute(name: name, limit: 1) {
+        reported = RateLimit.execute(name: name, limit: limit) {
             XCTFail("This shouldn't have run.")
         }
         XCTAssertFalse(reported)
 
-		// Sleep for a second
-		sleep(1)
+		// Sleep for almost the whole time limit
+		sleep(UInt32(limit - 1.0))
 
-        // Now it should get executed
+        // Haven't waited long enough yet
+        reported = RateLimit.execute(name: name, limit: limit) {
+            XCTFail("This shouldn't have run.")
+        }
+        XCTAssertFalse(reported)
+
+		sleep(2)
+        
+        // Now it should get executed (after the full interval)
         let expectation2 = expectationWithDescription("Execute 2")
-        reported = RateLimit.execute(name: name, limit: 1) {
+        reported = RateLimit.execute(name: name, limit: limit) {
             expectation2.fulfill()
         }
         XCTAssertTrue(reported)

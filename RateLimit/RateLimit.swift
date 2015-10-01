@@ -15,6 +15,7 @@ public class RateLimit: NSObject {
         @noescape block: Void -> ()) -> Bool {
             let delayTime = executionDelay(name: name, limit: limit)
             if delayTime <= 0 {
+                recordExecution(name: name)
                 block()
                 return true
                 
@@ -28,11 +29,15 @@ public class RateLimit: NSObject {
         block: Void -> ()) -> Bool {
             let delayTime = executionDelay(name: name, limit: limit)
             if delayTime <= 0 {
+                recordExecution(name: name)
                 block()
                 return true
                 
             } else {
-                delay(delayTime, block: block)
+                delay(delayTime, block: { () -> () in
+                    recordExecution(name: name)
+                    block()
+                })
                 return false
             }
     }
@@ -94,4 +99,5 @@ public class RateLimit: NSObject {
             ),
             dispatch_get_main_queue(), block)
     }
+    
 }

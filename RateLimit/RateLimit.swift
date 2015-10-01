@@ -12,6 +12,7 @@ public class RateLimit: NSObject {
 
     public class func execute(name name: String, limit: NSTimeInterval, @noescape block: Void -> ()) -> Bool {
         if shouldExecute(name: name, limit: limit) {
+            recordExecution(name: name)
             block()
 			return true
         }
@@ -59,11 +60,12 @@ public class RateLimit: NSObject {
 			} else {
 				should = true
 			}
-
-			// Record execution
-			dictionary[name] = NSDate()
 		}
 		
         return should
+    }
+    
+    private class func recordExecution(name name:String) {
+        dictionary[name] = NSDate()
     }
 }

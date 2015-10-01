@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Example.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>RateLimit-OSX.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>RateLimit-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>RateLimit-watchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2173751B1BA278BF0033461F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>219E72FF1B27702C004AB616</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>219E73091B27702C004AB616</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21B108371B279A4F003693A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21CDDFF31B278DB5001B8D87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21CDDFFC1B278DB5001B8D87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -23,6 +23,8 @@
 		21CDE00D1B278E37001B8D87 /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21CDE0161B278F96001B8D87 /* RateLimitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDE0121B278F54001B8D87 /* RateLimitTests.swift */; };
 		21CDE0171B278F97001B8D87 /* RateLimitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDE0121B278F54001B8D87 /* RateLimitTests.swift */; };
+		21E548E81BF69878004855AE /* RateLimit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219E73001B27702C004AB616 /* RateLimit.framework */; };
+		21E548EA1BF69894004855AE /* RateLimit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 219E73001B27702C004AB616 /* RateLimit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36C08FDA1B28EC85005DDE76 /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* RateLimit.swift */; };
 		36C08FDB1B28EC85005DDE76 /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* RateLimit.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +44,28 @@
 			remoteGlobalIDString = 21CDDFF31B278DB5001B8D87;
 			remoteInfo = RateLimit;
 		};
+		21E548E61BF69874004855AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 219E72F71B27702C004AB616 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 219E72FF1B27702C004AB616;
+			remoteInfo = "RateLimit-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		21E548E91BF6987B004855AE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				21E548EA1BF69894004855AE /* RateLimit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2173751C1BA278BF0033461F /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E548E81BF69878004855AE /* RateLimit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +284,12 @@
 				21B108341B279A4F003693A7 /* Sources */,
 				21B108351B279A4F003693A7 /* Frameworks */,
 				21B108361B279A4F003693A7 /* Resources */,
+				21E548E91BF6987B004855AE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				21E548E71BF69874004855AE /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -472,6 +498,11 @@
 			isa = PBXTargetDependency;
 			target = 21CDDFF31B278DB5001B8D87 /* RateLimit-OSX */;
 			targetProxy = 21CDDFFF1B278DB5001B8D87 /* PBXContainerItemProxy */;
+		};
+		21E548E71BF69874004855AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 219E72FF1B27702C004AB616 /* RateLimit-iOS */;
+			targetProxy = 21E548E61BF69874004855AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

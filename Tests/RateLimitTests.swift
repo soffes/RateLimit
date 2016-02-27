@@ -39,6 +39,38 @@ class RateLimitTests: XCTestCase {
         XCTAssertTrue(reported)
         waitForExpectationsWithTimeout(0, handler: nil)
     }
+    
+    func testLimitNotResetWhenNotExecuted() {
+        let name = "testLimitNotResetWhenNotExecuted"
+        
+        // It should get excuted first
+        let expectation1 = expectationWithDescription("Execute 1")
+        var reported = RateLimit.execute(name: name, limit: 2) {
+            expectation1.fulfill()
+        }
+        XCTAssertTrue(reported)
+        waitForExpectationsWithTimeout(0, handler: nil)
+        
+        // Sleep for a second
+        sleep(1)
+        
+        // Not right away after
+        reported = RateLimit.execute(name: name, limit: 2) {
+            XCTFail("This shouldn't have run.")
+        }
+        XCTAssertFalse(reported)
+        
+        // Sleep for a second
+        sleep(1)
+        
+        // Now it should get executed
+        let expectation2 = expectationWithDescription("Execute 2")
+        reported = RateLimit.execute(name: name, limit: 2) {
+            expectation2.fulfill()
+        }
+        XCTAssertTrue(reported)
+        waitForExpectationsWithTimeout(0, handler: nil)
+    }
 
     func testResetting() {
         let name = "testResetting"

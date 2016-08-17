@@ -16,32 +16,32 @@ All access to this class is thread-safe.
 This class has the same functionality as `SAMRateLimit` only times are persisted across application launches. The limits
 are separate from non-persisted version.
 */
-public class PersistentRateLimit: RateLimit {
+open class PersistentRateLimit: RateLimit {
 
 	// MARK: - RateLimit
 
-	public override class func resetAllLimits() {
+	open override class func resetAllLimits() {
 		super.resetAllLimits()
 
 		guard let fileURL = fileURL else { return }
 		do {
-			try NSFileManager.defaultManager().removeItemAtURL(fileURL)
+			try FileManager.default.removeItem(at: fileURL)
 		} catch {}
 	}
 
 
 	// MARK: - Private
 
-	private static let fileURL: NSURL? = {
-		let documents = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last
-		return documents?.URLByAppendingPathComponent("SAMPersistentRateLimit.plist")
+	fileprivate static let fileURL: URL? = {
+		let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last
+		return documents?.appendingPathComponent("SAMPersistentRateLimit.plist")
 	}()
 
 	override class func didChangeDictionary() {
 		guard let fileURL = fileURL else { return }
-		dispatch_async(queue) {
+		queue.async {
 			let dictionary = self.dictionary as NSDictionary
-			dictionary.writeToURL(fileURL, atomically: true)
+			dictionary.write(to: fileURL, atomically: true)
 		}
 	}
 }

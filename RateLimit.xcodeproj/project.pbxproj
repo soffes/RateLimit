@@ -82,7 +82,7 @@
 		21B108461B279A4F003693A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21B1084A1B279BB6003693A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		21CDDFF41B278DB5001B8D87 /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21CDDFFD1B278DB5001B8D87 /* RateLimitTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RateLimitTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CDDFFD1B278DB5001B8D87 /* RateLimitTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RateLimitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CDE0111B278F54001B8D87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21CDE0121B278F54001B8D87 /* RateLimitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimitTests.swift; sourceTree = "<group>"; };
 		36C08FD91B28EC85005DDE76 /* RateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimit.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 				219E73001B27702C004AB616 /* RateLimit.framework */,
 				219E730A1B27702C004AB616 /* RateLimitTests-iOS.xctest */,
 				21CDDFF41B278DB5001B8D87 /* RateLimit.framework */,
-				21CDDFFD1B278DB5001B8D87 /* RateLimitTests-OSX.xctest */,
+				21CDDFFD1B278DB5001B8D87 /* RateLimitTests-macOS.xctest */,
 				21B108381B279A4F003693A7 /* Example.app */,
 				2173751C1BA278BF0033461F /* RateLimit.framework */,
 			);
@@ -296,9 +296,9 @@
 			productReference = 21B108381B279A4F003693A7 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		21CDDFF31B278DB5001B8D87 /* RateLimit-OSX */ = {
+		21CDDFF31B278DB5001B8D87 /* RateLimit-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21CDE0051B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimit-OSX" */;
+			buildConfigurationList = 21CDE0051B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimit-macOS" */;
 			buildPhases = (
 				21CDDFEF1B278DB5001B8D87 /* Sources */,
 				21CDDFF01B278DB5001B8D87 /* Frameworks */,
@@ -309,14 +309,14 @@
 			);
 			dependencies = (
 			);
-			name = "RateLimit-OSX";
+			name = "RateLimit-macOS";
 			productName = RateLimit;
 			productReference = 21CDDFF41B278DB5001B8D87 /* RateLimit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		21CDDFFC1B278DB5001B8D87 /* RateLimitTests-OSX */ = {
+		21CDDFFC1B278DB5001B8D87 /* RateLimitTests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21CDE0081B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimitTests-OSX" */;
+			buildConfigurationList = 21CDE0081B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimitTests-macOS" */;
 			buildPhases = (
 				21CDDFF91B278DB5001B8D87 /* Sources */,
 				21CDDFFA1B278DB5001B8D87 /* Frameworks */,
@@ -327,9 +327,9 @@
 			dependencies = (
 				21CDE0001B278DB5001B8D87 /* PBXTargetDependency */,
 			);
-			name = "RateLimitTests-OSX";
+			name = "RateLimitTests-macOS";
 			productName = RateLimitTests;
-			productReference = 21CDDFFD1B278DB5001B8D87 /* RateLimitTests-OSX.xctest */;
+			productReference = 21CDDFFD1B278DB5001B8D87 /* RateLimitTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -380,8 +380,8 @@
 				21B108371B279A4F003693A7 /* Example */,
 				219E72FF1B27702C004AB616 /* RateLimit-iOS */,
 				219E73091B27702C004AB616 /* RateLimitTests-iOS */,
-				21CDDFF31B278DB5001B8D87 /* RateLimit-OSX */,
-				21CDDFFC1B278DB5001B8D87 /* RateLimitTests-OSX */,
+				21CDDFF31B278DB5001B8D87 /* RateLimit-macOS */,
+				21CDDFFC1B278DB5001B8D87 /* RateLimitTests-macOS */,
 				2173751B1BA278BF0033461F /* RateLimit-watchOS */,
 			);
 		};
@@ -498,7 +498,7 @@
 		};
 		21CDE0001B278DB5001B8D87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 21CDDFF31B278DB5001B8D87 /* RateLimit-OSX */;
+			target = 21CDDFF31B278DB5001B8D87 /* RateLimit-macOS */;
 			targetProxy = 21CDDFFF1B278DB5001B8D87 /* PBXContainerItemProxy */;
 		};
 		21E548E71BF69874004855AE /* PBXTargetDependency */ = {
@@ -604,6 +604,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -648,6 +649,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -673,7 +675,6 @@
 				PRODUCT_NAME = RateLimit;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				WARNING_CFLAGS = (
 					"-Weverything",
 					"-Wno-missing-variable-declarations",
@@ -699,7 +700,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.RateLimit;
 				PRODUCT_NAME = RateLimit;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				WARNING_CFLAGS = (
 					"-Weverything",
 					"-Wno-missing-variable-declarations",
@@ -883,7 +883,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21CDE0051B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimit-OSX" */ = {
+		21CDE0051B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimit-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21CDE0061B278DB5001B8D87 /* Debug */,
@@ -892,7 +892,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21CDE0081B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimitTests-OSX" */ = {
+		21CDE0081B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimitTests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21CDE0091B278DB5001B8D87 /* Debug */,

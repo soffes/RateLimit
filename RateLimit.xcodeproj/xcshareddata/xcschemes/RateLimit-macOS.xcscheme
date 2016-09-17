@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "21CDDFF31B278DB5001B8D87"
                BuildableName = "RateLimit.framework"
-               BlueprintName = "RateLimit-OSX"
+               BlueprintName = "RateLimit-macOS"
                ReferencedContainer = "container:RateLimit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "21CDDFFC1B278DB5001B8D87"
-               BuildableName = "RateLimitTests-OSX.xctest"
-               BlueprintName = "RateLimitTests-OSX"
+               BuildableName = "RateLimitTests-macOS.xctest"
+               BlueprintName = "RateLimitTests-macOS"
                ReferencedContainer = "container:RateLimit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21CDDFF31B278DB5001B8D87"
             BuildableName = "RateLimit.framework"
-            BlueprintName = "RateLimit-OSX"
+            BlueprintName = "RateLimit-macOS"
             ReferencedContainer = "container:RateLimit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21CDDFF31B278DB5001B8D87"
             BuildableName = "RateLimit.framework"
-            BlueprintName = "RateLimit-OSX"
+            BlueprintName = "RateLimit-macOS"
             ReferencedContainer = "container:RateLimit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,7 +85,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21CDDFF31B278DB5001B8D87"
             BuildableName = "RateLimit.framework"
-            BlueprintName = "RateLimit-OSX"
+            BlueprintName = "RateLimit-macOS"
             ReferencedContainer = "container:RateLimit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

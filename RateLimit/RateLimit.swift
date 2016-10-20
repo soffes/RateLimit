@@ -10,31 +10,31 @@ import Foundation
 
 open class RateLimit: NSObject {
 
-    @discardableResult open class func execute(name: String, limit: TimeInterval, block: (Void) -> ()) -> Bool {
-        if shouldExecute(name: name, limit: limit) {
-            block()
+	@discardableResult open class func execute(name: String, limit: TimeInterval, block: (Void) -> ()) -> Bool {
+		if shouldExecute(name: name, limit: limit) {
+			block()
 			return true
-        }
+		}
 
-        return false
-    }
+		return false
+	}
 
-    open class func resetLimitForName(_ name: String) {
-        queue.sync {
-            let _ = dictionary.removeValue(forKey: name)
-        }
-    }
+	open class func resetLimitForName(_ name: String) {
+		queue.sync {
+			let _ = dictionary.removeValue(forKey: name)
+		}
+	}
 
-    open class func resetAllLimits() {
-        queue.sync {
-            dictionary.removeAll()
-        }
-    }
+	open class func resetAllLimits() {
+		queue.sync {
+			dictionary.removeAll()
+		}
+	}
 
 
-    // MARK: - Private
+	// MARK: - Private
 
-    static let queue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
+	static let queue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
 
 	static var dictionary = [String: Date]() {
 		didSet {
@@ -46,7 +46,7 @@ open class RateLimit: NSObject {
 		// Do nothing
 	}
 
-    fileprivate class func shouldExecute(name: String, limit: TimeInterval) -> Bool {
+	fileprivate class func shouldExecute(name: String, limit: TimeInterval) -> Bool {
 		var should = false
 
 		queue.sync {
@@ -63,7 +63,7 @@ open class RateLimit: NSObject {
 			// Record execution
 			dictionary[name] = Date()
 		}
-		
-        return should
-    }
+
+		return should
+	}
 }

@@ -146,6 +146,7 @@
 				219E73011B27702C004AB616 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		219E73011B27702C004AB616 /* Products */ = {
 			isa = PBXGroup;

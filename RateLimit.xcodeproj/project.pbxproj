@@ -19,6 +19,9 @@
 		210C048F1DB93E7400B721DF /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C048D1DB93E7400B721DF /* RateLimit.swift */; };
 		210C04901DB93E7400B721DF /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C048D1DB93E7400B721DF /* RateLimit.swift */; };
 		210C04911DB93E7400B721DF /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C048D1DB93E7400B721DF /* RateLimit.swift */; };
+		2154E0C41DB95FB0006D19E5 /* CountedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C31DB95FB0006D19E5 /* CountedTests.swift */; };
+		2154E0C51DB95FB0006D19E5 /* CountedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C31DB95FB0006D19E5 /* CountedTests.swift */; };
+		2154E0C61DB95FB0006D19E5 /* CountedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C31DB95FB0006D19E5 /* CountedTests.swift */; };
 		217375241BA278DE0033461F /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		217375251BA278DE0033461F /* TimedLimter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* TimedLimter.swift */; };
 		219E73041B27702C004AB616 /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -91,6 +94,7 @@
 		210C04831DB93B8800B721DF /* Limiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Limiter.swift; sourceTree = "<group>"; };
 		210C04881DB93CC000B721DF /* CountedLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedLimiter.swift; sourceTree = "<group>"; };
 		210C048D1DB93E7400B721DF /* RateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimit.swift; sourceTree = "<group>"; };
+		2154E0C31DB95FB0006D19E5 /* CountedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedTests.swift; sourceTree = "<group>"; };
 		2173751C1BA278BF0033461F /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		219E73001B27702C004AB616 /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		219E73031B27702C004AB616 /* RateLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RateLimit.h; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 			children = (
 				21CDE0111B278F54001B8D87 /* Info.plist */,
 				21CDE0121B278F54001B8D87 /* RateLimitTests.swift */,
+				2154E0C31DB95FB0006D19E5 /* CountedTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2154E0C41DB95FB0006D19E5 /* CountedTests.swift in Sources */,
 				21CDE0171B278F97001B8D87 /* RateLimitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2154E0C61DB95FB0006D19E5 /* CountedTests.swift in Sources */,
 				21B8D2CB1DB9385100E50211 /* RateLimitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2154E0C51DB95FB0006D19E5 /* CountedTests.swift in Sources */,
 				21CDE0161B278F96001B8D87 /* RateLimitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

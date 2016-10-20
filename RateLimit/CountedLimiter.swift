@@ -31,7 +31,7 @@ public final class CountedLimiter: Limiter {
 		var executed = false
 
 		queue.sync {
-			if count <= limit {
+			if count < limit {
 				count += 1
 				block()
 				executed = true

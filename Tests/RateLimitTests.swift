@@ -11,7 +11,7 @@
 import XCTest
 import RateLimit
 
-class RateLimitTests: XCTestCase {
+final class RateLimitTests: XCTestCase {
 
 	func testLimit() {
 		let name = "testLimit"

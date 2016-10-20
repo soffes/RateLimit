@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "21B8D2AE1DB9380100E50211"
-               BuildableName = "RateLimit-tvOS.framework"
+               BuildableName = "RateLimit.framework"
                BlueprintName = "RateLimit-tvOS"
                ReferencedContainer = "container:RateLimit.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "21B8D2B61DB9380200E50211"
-               BuildableName = "RateLimitTests-tvOS.xctest"
+               BuildableName = "RateLimitTests.xctest"
                BlueprintName = "RateLimitTests-tvOS"
                ReferencedContainer = "container:RateLimit.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21B8D2AE1DB9380100E50211"
-            BuildableName = "RateLimit-tvOS.framework"
+            BuildableName = "RateLimit.framework"
             BlueprintName = "RateLimit-tvOS"
             ReferencedContainer = "container:RateLimit.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21B8D2AE1DB9380100E50211"
-            BuildableName = "RateLimit-tvOS.framework"
+            BuildableName = "RateLimit.framework"
             BlueprintName = "RateLimit-tvOS"
             ReferencedContainer = "container:RateLimit.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21B8D2AE1DB9380100E50211"
-            BuildableName = "RateLimit-tvOS.framework"
+            BuildableName = "RateLimit.framework"
             BlueprintName = "RateLimit-tvOS"
             ReferencedContainer = "container:RateLimit.xcodeproj">
          </BuildableReference>

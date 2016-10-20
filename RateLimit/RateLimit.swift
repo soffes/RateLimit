@@ -8,23 +8,33 @@
 
 import Foundation
 
-open class RateLimit: NSObject {
+/// Legacy interface.
+///
+/// The only difference between this deprecated wrapper and the previous version is once a limit is set, it cannot be
+/// changed. Whatever limit is set first, will be used for all subsequent calls.
+@available(*, deprecated: 2.0.0, message: "use TimedLimiter")
+public class RateLimit: NSObject {
 
-	@discardableResult open class func execute(name: String, limit: TimeInterval, block: (Void) -> ()) -> Bool {
+	// MARK: - Properties
+
+	private static let queue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
+
+	private static var dictionary = [String: TimedLimiter]()
+
+
+	// MARK: - Execution
+
+	@discardableResult public class func execute(name: String, limit: TimeInterval, block: () -> Void) -> Bool {
 		var executed = false
 
 		queue.sync {
-			let now = Date()
+			let limiter = dictionary[name] ?? {
+				let limiter = TimedLimiter(limit: limit)
+				dictionary[name] = limiter
+				return limiter
+			}()
 
-			// Lookup last executed
-			let timeInterval = now.timeIntervalSince(dictionary[name] ?? .distantPast)
-
-			// If the time since last execution is greater than the limit, execute
-			if timeInterval > limit {
-				// Record execution
-				dictionary[name] = now
-
-				// Execute
+			limiter.execute {
 				block()
 				executed = true
 			}
@@ -33,30 +43,18 @@ open class RateLimit: NSObject {
 		return executed
 	}
 
-	open class func resetLimitForName(_ name: String) {
+
+	// MARK: - Limiting
+
+	public static func resetLimitForName(_ name: String) {
 		queue.sync {
 			let _ = dictionary.removeValue(forKey: name)
 		}
 	}
 
-	open class func resetAllLimits() {
+	public static func resetAllLimits() {
 		queue.sync {
 			dictionary.removeAll()
 		}
-	}
-
-
-	// MARK: - Internal
-
-	static let queue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
-
-	static var dictionary = [String: Date]() {
-		didSet {
-			didChangeDictionary()
-		}
-	}
-
-	class func didChangeDictionary() {
-		// Do nothing
 	}
 }

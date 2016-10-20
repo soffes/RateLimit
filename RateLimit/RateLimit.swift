@@ -34,10 +34,7 @@ public class RateLimit: NSObject {
 				return limiter
 			}()
 
-			limiter.execute {
-				block()
-				executed = true
-			}
+			executed = limiter.execute(block)
 		}
 
 		return executed

@@ -7,6 +7,6 @@
 //
 
 public protocol Limiter {
-	func execute(_ block: () -> Void)
+	@discardableResult func execute(_ block: () -> Void) -> Bool
 	func reset()
 }

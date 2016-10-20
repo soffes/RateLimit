@@ -27,13 +27,18 @@ public final class CountedLimiter: Limiter {
 
 	// MARK: - Limiter
 
-	public func execute(_ block: () -> Void) {
+	@discardableResult public func execute(_ block: () -> Void) -> Bool {
+		var executed = false
+
 		queue.sync {
 			if count <= limit {
 				count += 1
 				block()
+				executed = true
 			}
 		}
+
+		return executed
 	}
 
 	public func reset() {

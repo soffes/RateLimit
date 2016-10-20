@@ -27,7 +27,9 @@ public final class TimedLimiter: Limiter {
 
 	// MARK: - Limiter
 
-	public func execute(_ block: () -> Void) {
+	@discardableResult public func execute(_ block: () -> Void) -> Bool {
+		var executed = false
+
 		queue.sync {
 			let now = Date()
 
@@ -41,8 +43,11 @@ public final class TimedLimiter: Limiter {
 
 				// Execute
 				block()
+				executed = true
 			}
 		}
+
+		return executed
 	}
 
 	public func reset() {

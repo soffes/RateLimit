@@ -11,12 +11,26 @@ import Foundation
 open class RateLimit: NSObject {
 
 	@discardableResult open class func execute(name: String, limit: TimeInterval, block: (Void) -> ()) -> Bool {
-		if shouldExecute(name: name, limit: limit) {
-			block()
-			return true
+		var executed = false
+
+		queue.sync {
+			let now = Date()
+
+			// Lookup last executed
+			let timeInterval = now.timeIntervalSince(dictionary[name] ?? .distantPast)
+
+			// If the time since last execution is greater than the limit, execute
+			if timeInterval > limit {
+				// Record execution
+				dictionary[name] = now
+
+				// Execute
+				block()
+				executed = true
+			}
 		}
 
-		return false
+		return executed
 	}
 
 	open class func resetLimitForName(_ name: String) {
@@ -32,7 +46,7 @@ open class RateLimit: NSObject {
 	}
 
 
-	// MARK: - Private
+	// MARK: - Internal
 
 	static let queue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
 
@@ -44,26 +58,5 @@ open class RateLimit: NSObject {
 
 	class func didChangeDictionary() {
 		// Do nothing
-	}
-
-	fileprivate class func shouldExecute(name: String, limit: TimeInterval) -> Bool {
-		var should = false
-
-		queue.sync {
-			// Lookup last executed
-			if let lastExecutedAt = dictionary[name] {
-				let timeInterval = lastExecutedAt.timeIntervalSinceNow
-
-				// If last excuted is less than the limit, don't execute
-				should = !(timeInterval < 0 && abs(timeInterval) < limit)
-			} else {
-				should = true
-			}
-
-			// Record execution
-			dictionary[name] = Date()
-		}
-
-		return should
 	}
 }

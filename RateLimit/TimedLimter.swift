@@ -8,14 +8,14 @@
 
 import Foundation
 
-public final class TimedLimiter: Limiter {
+public final class TimedLimiter: SyncLimiter {
 
 	// MARK: - Properties
 
 	public let limit: TimeInterval
 	public private(set) var lastExecutedAt: Date?
 
-	private let queue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
+	private let syncQueue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
 
 
 	// MARK: - Initializers
@@ -30,7 +30,7 @@ public final class TimedLimiter: Limiter {
 	@discardableResult public func execute(_ block: () -> Void) -> Bool {
 		var executed = false
 
-		queue.sync {
+		syncQueue.sync {
 			let now = Date()
 
 			// Lookup last executed
@@ -51,7 +51,7 @@ public final class TimedLimiter: Limiter {
 	}
 
 	public func reset() {
-		queue.sync {
+		syncQueue.sync {
 			lastExecutedAt = nil
 		}
 	}

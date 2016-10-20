@@ -8,14 +8,14 @@
 
 import Foundation
 
-public final class CountedLimiter: Limiter {
+public final class CountedLimiter: SyncLimiter {
 
 	// MARK: - Properties
 
 	public let limit: UInt
 	public private(set) var count: UInt = 0
 
-	private let queue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
+	private let syncQueue = DispatchQueue(label: "com.samsoffes.ratelimit", attributes: [])
 
 
 	// MARK: - Initializers
@@ -30,7 +30,7 @@ public final class CountedLimiter: Limiter {
 	@discardableResult public func execute(_ block: () -> Void) -> Bool {
 		var executed = false
 
-		queue.sync {
+		syncQueue.sync {
 			if count < limit {
 				count += 1
 				block()
@@ -42,7 +42,7 @@ public final class CountedLimiter: Limiter {
 	}
 
 	public func reset() {
-		queue.sync {
+		syncQueue.sync {
 			count = 0
 		}
 	}

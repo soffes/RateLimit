@@ -26,4 +26,14 @@ Open up the included [Xcode project](RateLimit.xcodeproj) for an [example app](E
 
 ## Installation
 
-Simply add the files in the `RateLimit` directory to your project or add `RateLimit` to your Podfile if you're using CocoaPods.
+### Old-School
+
+Simply add the files in the `RateLimit` directory to your project.
+
+### CocoaPods
+
+Add the following to your `Podfile`:
+```
+pod "RateLimit"
+```
+Then run `pod install`.

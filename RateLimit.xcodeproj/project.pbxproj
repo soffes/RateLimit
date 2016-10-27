@@ -1096,6 +1096,7 @@
 				21B8D2C21DB9380200E50211 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21B8D2C31DB9380200E50211 /* Build configuration list for PBXNativeTarget "RateLimitTests-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -1104,6 +1105,7 @@
 				21B8D2C51DB9380200E50211 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21CDE0051B278DB5001B8D87 /* Build configuration list for PBXNativeTarget "RateLimit-macOS" */ = {
 			isa = XCConfigurationList;

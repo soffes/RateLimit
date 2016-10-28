@@ -32,6 +32,25 @@ final class CountedTests: XCTestCase {
 		XCTAssertEqual(2, limiter.count)
 
 		waitForExpectations(timeout: 1)
+	}
 
+	func testReturn() {
+		let limiter = CountedLimiter(limit: 1)
+
+		let one = expectation(description: "one")
+		let value1 = limiter.execute { () -> Int in
+			one.fulfill()
+			return 42
+		}
+
+		XCTAssertEqual(42, value1)
+
+		let value2 = limiter.execute { () -> Int in
+			return 19
+		}
+
+		XCTAssertNil(value2)
+
+		waitForExpectations(timeout: 0)
 	}
 }

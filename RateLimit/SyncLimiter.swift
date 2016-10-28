@@ -10,3 +10,16 @@ public protocol SyncLimiter {
 	@discardableResult func execute(_ block: () -> Void) -> Bool
 	func reset()
 }
+
+
+extension SyncLimiter {
+	public func execute<T>(_ block: () -> T) -> T? {
+		var value: T? = nil
+
+		execute {
+			value = block()
+		}
+
+		return value
+	}
+}

@@ -7,11 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210C04841DB93B8800B721DF /* SyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* SyncLimiter.swift */; };
+		210C04851DB93B8800B721DF /* SyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* SyncLimiter.swift */; };
+		210C04861DB93B8800B721DF /* SyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* SyncLimiter.swift */; };
+		210C04871DB93B8800B721DF /* SyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* SyncLimiter.swift */; };
+		210C04891DB93CC000B721DF /* CountedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04881DB93CC000B721DF /* CountedLimiter.swift */; };
+		210C048A1DB93CC000B721DF /* CountedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04881DB93CC000B721DF /* CountedLimiter.swift */; };
+		210C048B1DB93CC000B721DF /* CountedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04881DB93CC000B721DF /* CountedLimiter.swift */; };
+		210C048C1DB93CC000B721DF /* CountedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04881DB93CC000B721DF /* CountedLimiter.swift */; };
+		210C048E1DB93E7400B721DF /* Legacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C048D1DB93E7400B721DF /* Legacy.swift */; };
+		210C048F1DB93E7400B721DF /* Legacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C048D1DB93E7400B721DF /* Legacy.swift */; };
+		210C04901DB93E7400B721DF /* Legacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C048D1DB93E7400B721DF /* Legacy.swift */; };
+		210C04911DB93E7400B721DF /* Legacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C048D1DB93E7400B721DF /* Legacy.swift */; };
+		2154E0C41DB95FB0006D19E5 /* CountedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C31DB95FB0006D19E5 /* CountedTests.swift */; };
+		2154E0C51DB95FB0006D19E5 /* CountedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C31DB95FB0006D19E5 /* CountedTests.swift */; };
+		2154E0C61DB95FB0006D19E5 /* CountedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C31DB95FB0006D19E5 /* CountedTests.swift */; };
+		2154E0D31DB9619C006D19E5 /* DebouncedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0D21DB9619C006D19E5 /* DebouncedTests.swift */; };
+		2154E0D41DB9619C006D19E5 /* DebouncedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0D21DB9619C006D19E5 /* DebouncedTests.swift */; };
+		2154E0D51DB9619C006D19E5 /* DebouncedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0D21DB9619C006D19E5 /* DebouncedTests.swift */; };
+		2154E0D91DB961A3006D19E5 /* AsyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C71DB96125006D19E5 /* AsyncLimiter.swift */; };
+		2154E0DA1DB961A3006D19E5 /* DebouncedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0CB1DB9612D006D19E5 /* DebouncedLimiter.swift */; };
+		2154E0DB1DB961A5006D19E5 /* AsyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C71DB96125006D19E5 /* AsyncLimiter.swift */; };
+		2154E0DC1DB961A5006D19E5 /* DebouncedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0CB1DB9612D006D19E5 /* DebouncedLimiter.swift */; };
+		2154E0E01DB961A7006D19E5 /* AsyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C71DB96125006D19E5 /* AsyncLimiter.swift */; };
+		2154E0E11DB961A7006D19E5 /* DebouncedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0CB1DB9612D006D19E5 /* DebouncedLimiter.swift */; };
+		2154E0E21DB961A7006D19E5 /* AsyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0C71DB96125006D19E5 /* AsyncLimiter.swift */; };
+		2154E0E31DB961A7006D19E5 /* DebouncedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154E0CB1DB9612D006D19E5 /* DebouncedLimiter.swift */; };
 		217375241BA278DE0033461F /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		217375251BA278DE0033461F /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* RateLimit.swift */; };
-		2173752D1BA2791E0033461F /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173752C1BA2791E0033461F /* PersistentRateLimit.swift */; };
-		2173752E1BA2791E0033461F /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173752C1BA2791E0033461F /* PersistentRateLimit.swift */; };
-		2173752F1BA2791E0033461F /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173752C1BA2791E0033461F /* PersistentRateLimit.swift */; };
+		217375251BA278DE0033461F /* TimedLimter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* TimedLimter.swift */; };
 		219E73041B27702C004AB616 /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		219E730B1B27702C004AB616 /* RateLimit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219E73001B27702C004AB616 /* RateLimit.framework */; };
 		21B1083B1B279A4F003693A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1083A1B279A4F003693A7 /* AppDelegate.swift */; };
@@ -20,8 +43,7 @@
 		21B108451B279A4F003693A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B108431B279A4F003693A7 /* LaunchScreen.storyboard */; };
 		21B1084B1B279BB6003693A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B1084A1B279BB6003693A7 /* Main.storyboard */; };
 		21B8D2B81DB9380200E50211 /* RateLimit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B8D2AF1DB9380100E50211 /* RateLimit.framework */; };
-		21B8D2C81DB9384400E50211 /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* RateLimit.swift */; };
-		21B8D2C91DB9384400E50211 /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173752C1BA2791E0033461F /* PersistentRateLimit.swift */; };
+		21B8D2C81DB9384400E50211 /* TimedLimter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* TimedLimter.swift */; };
 		21B8D2CA1DB9384800E50211 /* RateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219E73031B27702C004AB616 /* RateLimit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B8D2CB1DB9385100E50211 /* RateLimitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDE0121B278F54001B8D87 /* RateLimitTests.swift */; };
 		21CDDFFE1B278DB5001B8D87 /* RateLimit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDDFF41B278DB5001B8D87 /* RateLimit.framework */; };
@@ -30,8 +52,8 @@
 		21CDE0171B278F97001B8D87 /* RateLimitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDE0121B278F54001B8D87 /* RateLimitTests.swift */; };
 		21E548E81BF69878004855AE /* RateLimit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219E73001B27702C004AB616 /* RateLimit.framework */; };
 		21E548EA1BF69894004855AE /* RateLimit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 219E73001B27702C004AB616 /* RateLimit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		36C08FDA1B28EC85005DDE76 /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* RateLimit.swift */; };
-		36C08FDB1B28EC85005DDE76 /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* RateLimit.swift */; };
+		36C08FDA1B28EC85005DDE76 /* TimedLimter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* TimedLimter.swift */; };
+		36C08FDB1B28EC85005DDE76 /* TimedLimter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C08FD91B28EC85005DDE76 /* TimedLimter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +102,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		210C04831DB93B8800B721DF /* SyncLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncLimiter.swift; sourceTree = "<group>"; };
+		210C04881DB93CC000B721DF /* CountedLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedLimiter.swift; sourceTree = "<group>"; };
+		210C048D1DB93E7400B721DF /* Legacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legacy.swift; sourceTree = "<group>"; };
+		2154E0C31DB95FB0006D19E5 /* CountedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedTests.swift; sourceTree = "<group>"; };
+		2154E0C71DB96125006D19E5 /* AsyncLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncLimiter.swift; sourceTree = "<group>"; };
+		2154E0CB1DB9612D006D19E5 /* DebouncedLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebouncedLimiter.swift; sourceTree = "<group>"; };
+		2154E0D21DB9619C006D19E5 /* DebouncedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebouncedTests.swift; sourceTree = "<group>"; };
 		2173751C1BA278BF0033461F /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2173752C1BA2791E0033461F /* PersistentRateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentRateLimit.swift; sourceTree = "<group>"; };
 		219E73001B27702C004AB616 /* RateLimit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RateLimit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		219E73031B27702C004AB616 /* RateLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RateLimit.h; sourceTree = "<group>"; };
 		219E73051B27702C004AB616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +127,7 @@
 		21CDDFFD1B278DB5001B8D87 /* RateLimitTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RateLimitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CDE0111B278F54001B8D87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21CDE0121B278F54001B8D87 /* RateLimitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimitTests.swift; sourceTree = "<group>"; };
-		36C08FD91B28EC85005DDE76 /* RateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimit.swift; sourceTree = "<group>"; };
+		36C08FD91B28EC85005DDE76 /* TimedLimter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedLimter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +194,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2154E0CF1DB96137006D19E5 /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				210C04831DB93B8800B721DF /* SyncLimiter.swift */,
+				36C08FD91B28EC85005DDE76 /* TimedLimter.swift */,
+				210C04881DB93CC000B721DF /* CountedLimiter.swift */,
+			);
+			name = Sync;
+			sourceTree = "<group>";
+		};
+		2154E0D01DB9613B006D19E5 /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				2154E0C71DB96125006D19E5 /* AsyncLimiter.swift */,
+				2154E0CB1DB9612D006D19E5 /* DebouncedLimiter.swift */,
+			);
+			name = Async;
+			sourceTree = "<group>";
+		};
 		219E72F61B27702C004AB616 = {
 			isa = PBXGroup;
 			children = (
@@ -196,8 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				219E73031B27702C004AB616 /* RateLimit.h */,
-				36C08FD91B28EC85005DDE76 /* RateLimit.swift */,
-				2173752C1BA2791E0033461F /* PersistentRateLimit.swift */,
+				210C048D1DB93E7400B721DF /* Legacy.swift */,
+				2154E0CF1DB96137006D19E5 /* Sync */,
+				2154E0D01DB9613B006D19E5 /* Async */,
 				219E73051B27702C004AB616 /* Info.plist */,
 			);
 			path = RateLimit;
@@ -221,6 +269,8 @@
 			children = (
 				21CDE0111B278F54001B8D87 /* Info.plist */,
 				21CDE0121B278F54001B8D87 /* RateLimitTests.swift */,
+				2154E0C31DB95FB0006D19E5 /* CountedTests.swift */,
+				2154E0D21DB9619C006D19E5 /* DebouncedTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -540,8 +590,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				217375251BA278DE0033461F /* RateLimit.swift in Sources */,
-				2173752F1BA2791E0033461F /* PersistentRateLimit.swift in Sources */,
+				210C04861DB93B8800B721DF /* SyncLimiter.swift in Sources */,
+				210C04901DB93E7400B721DF /* Legacy.swift in Sources */,
+				2154E0DC1DB961A5006D19E5 /* DebouncedLimiter.swift in Sources */,
+				217375251BA278DE0033461F /* TimedLimter.swift in Sources */,
+				2154E0DB1DB961A5006D19E5 /* AsyncLimiter.swift in Sources */,
+				210C048B1DB93CC000B721DF /* CountedLimiter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,8 +603,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C08FDA1B28EC85005DDE76 /* RateLimit.swift in Sources */,
-				2173752D1BA2791E0033461F /* PersistentRateLimit.swift in Sources */,
+				210C04841DB93B8800B721DF /* SyncLimiter.swift in Sources */,
+				210C048E1DB93E7400B721DF /* Legacy.swift in Sources */,
+				2154E0E31DB961A7006D19E5 /* DebouncedLimiter.swift in Sources */,
+				36C08FDA1B28EC85005DDE76 /* TimedLimter.swift in Sources */,
+				2154E0E21DB961A7006D19E5 /* AsyncLimiter.swift in Sources */,
+				210C04891DB93CC000B721DF /* CountedLimiter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +616,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2154E0D31DB9619C006D19E5 /* DebouncedTests.swift in Sources */,
+				2154E0C41DB95FB0006D19E5 /* CountedTests.swift in Sources */,
 				21CDE0171B278F97001B8D87 /* RateLimitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,8 +635,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B8D2C91DB9384400E50211 /* PersistentRateLimit.swift in Sources */,
-				21B8D2C81DB9384400E50211 /* RateLimit.swift in Sources */,
+				210C04871DB93B8800B721DF /* SyncLimiter.swift in Sources */,
+				210C04911DB93E7400B721DF /* Legacy.swift in Sources */,
+				2154E0DA1DB961A3006D19E5 /* DebouncedLimiter.swift in Sources */,
+				21B8D2C81DB9384400E50211 /* TimedLimter.swift in Sources */,
+				2154E0D91DB961A3006D19E5 /* AsyncLimiter.swift in Sources */,
+				210C048C1DB93CC000B721DF /* CountedLimiter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +648,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2154E0D51DB9619C006D19E5 /* DebouncedTests.swift in Sources */,
+				2154E0C61DB95FB0006D19E5 /* CountedTests.swift in Sources */,
 				21B8D2CB1DB9385100E50211 /* RateLimitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,8 +658,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C08FDB1B28EC85005DDE76 /* RateLimit.swift in Sources */,
-				2173752E1BA2791E0033461F /* PersistentRateLimit.swift in Sources */,
+				210C04851DB93B8800B721DF /* SyncLimiter.swift in Sources */,
+				210C048F1DB93E7400B721DF /* Legacy.swift in Sources */,
+				2154E0E11DB961A7006D19E5 /* DebouncedLimiter.swift in Sources */,
+				36C08FDB1B28EC85005DDE76 /* TimedLimter.swift in Sources */,
+				2154E0E01DB961A7006D19E5 /* AsyncLimiter.swift in Sources */,
+				210C048A1DB93CC000B721DF /* CountedLimiter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +671,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2154E0D41DB9619C006D19E5 /* DebouncedTests.swift in Sources */,
+				2154E0C51DB95FB0006D19E5 /* CountedTests.swift in Sources */,
 				21CDE0161B278F96001B8D87 /* RateLimitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

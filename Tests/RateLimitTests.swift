@@ -11,7 +11,7 @@
 import XCTest
 import RateLimit
 
-class RateLimitTests: XCTestCase {
+final class RateLimitTests: XCTestCase {
 
 	func testLimit() {
 		let name = "testLimit"
@@ -31,11 +31,11 @@ class RateLimitTests: XCTestCase {
 		XCTAssertFalse(reported)
 
 		// Sleep for a second
-		sleep(1)
+		sleep(2)
 
 		// Now it should get executed
 		let expectation2 = expectation(description: "Execute 2")
-		reported = RateLimit.execute(name: name, limit: 1) {
+		reported = RateLimit.execute(name: name, limit: 2) {
 			expectation2.fulfill()
 		}
 		XCTAssertTrue(reported)

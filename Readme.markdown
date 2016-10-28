@@ -17,15 +17,60 @@ Rate Limit is **fully thread-safe.** Released under the [MIT license](LICENSE).
 
 ## Usage
 
+We’ll start out with a `TimedLimiter`:
+
 ``` swift
-RateLimit.execute(name: "RefreshTimeline", limit: 60) {
-    // Do some work that runs a maximum of once per minute
+// Initialize with a limit of 5, so you can only use this once every 5 seconds.
+let refreshTimeline = TimedLimiter(limit: 5)
+
+// Call the work you want to limit by passing a block to the execute method.
+refreshTimeline.execute {
+    // Do some work that runs a maximum of once per 5 seconds.
 }
 ```
 
-Rate Limit doesn't persist limts across application launches. For most cases, this is ideal. If you need persistence, simply replace `RateLimit` with `PersistentRateLimit` for on disk persistence. Easy as that.
+Limiters aren’t persisted across application launches.
 
-Open up the included [Xcode project](RateLimit.xcodeproj) for an [example app](Example) and [tests](Tests). See the [code](RateLimit/RateLimit.swift) for full documentation.
+### Synchronous Limiters
+
+`TimedLimiter` conforms to the `SyncLimiter` protocol. This means that the block you pass to execute will be called synchronously on the queue you called it from if it should fire. `TimedLimiter` uses time to limit.
+
+`CountedLimiter` is also included. This works by taking a limit as a `UInt` for the maximum number of times to run the block.
+
+The `SyncLimiter` protocol has a really neat extension that let’s you do things like this:
+
+``` swift
+let funFactLimiter = CountedLimiter(limit: 2)
+let funFact = funFactLimiter.execute { () -> String in
+    // Do real things to get a fun fact from a list
+    return "Hi"
+}
+```
+
+Now `funFact` is a `String?`. It’s just an optional of whatever you return from the block. The returned value will be `nil` if the block didn’t run.
+
+You can of course make your own `SyncLimiter`s too!
+
+
+### Asynchronous Limiter
+
+One `AsyncLimiter` is included. You can make your own too. The included async limiter is `DebouncedLimiter`. This is perfect for making network requests as a user types or other tasks that respond to very frequent events.
+
+The interface is slightly different:
+
+``` swift
+let searchLimiter = DebouncedLimiter(limit: 1, block: performSearch)
+
+func textDidChange() {
+  searchLimiter.execute()
+}
+```
+
+You would have to setup the limiter in an initializer since it references an instance method, but you get the idea. The block will be called at most once per second in this configuration.
+
+Pretty easy!
+
+Open up the included [Xcode project](RateLimit.xcodeproj) for an [example app](Example) and [tests](Tests).
 
 
 ## Installation
@@ -35,7 +80,7 @@ Open up the included [Xcode project](RateLimit.xcodeproj) for an [example app](E
 [Carthage](https://github.com/carthage/carthage) is the recommended way to install Rate Limit. Add the following to your Cartfile:
 
 ``` ruby
-github "soffes/Crypto"
+github "soffes/RateLimit"
 ```
 
 ### CocoaPods

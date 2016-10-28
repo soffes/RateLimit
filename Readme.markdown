@@ -30,4 +30,20 @@ Open up the included [Xcode project](RateLimit.xcodeproj) for an [example app](E
 
 ## Installation
 
-Simply add the files in the `RateLimit` directory to your project or add `RateLimit` to your Podfile if you're using CocoaPods.
+### Carthage
+
+[Carthage](https://github.com/carthage/carthage) is the recommended way to install Rate Limit. Add the following to your Cartfile:
+
+``` ruby
+github "soffes/Crypto"
+```
+
+### CocoaPods
+
+Add the following to your `Podfile`:
+
+``` ruby
+pod "RateLimit"
+```
+
+Then run `pod install`.

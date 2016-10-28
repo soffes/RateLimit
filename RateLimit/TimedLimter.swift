@@ -28,9 +28,7 @@ public final class TimedLimiter: SyncLimiter {
 	// MARK: - Limiter
 
 	@discardableResult public func execute(_ block: () -> Void) -> Bool {
-		var executed = false
-
-		syncQueue.sync {
+		let executed = syncQueue.sync { () -> Bool in
 			let now = Date()
 
 			// Lookup last executed
@@ -42,9 +40,14 @@ public final class TimedLimiter: SyncLimiter {
 				lastExecutedAt = now
 
 				// Execute
-				block()
-				executed = true
+				return true
 			}
+
+			return false
+		}
+
+		if executed {
+			block()
 		}
 
 		return executed

@@ -1,5 +1,5 @@
 //
-//  RateLimit.swift
+//  Legacy.swift
 //  RateLimit
 //
 //  Created by Sam Soffes on 4/9/12.

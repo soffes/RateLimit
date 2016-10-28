@@ -28,14 +28,16 @@ public final class CountedLimiter: SyncLimiter {
 	// MARK: - Limiter
 
 	@discardableResult public func execute(_ block: () -> Void) -> Bool {
-		var executed = false
-
-		syncQueue.sync {
+		let executed = syncQueue.sync { () -> Bool in
 			if count < limit {
 				count += 1
-				block()
-				executed = true
+				return true
 			}
+			return false
+		}
+
+		if executed {
+			block()
 		}
 
 		return executed

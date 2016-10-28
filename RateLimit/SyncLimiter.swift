@@ -1,5 +1,5 @@
 //
-//  Limiter.swift
+//  SyncLimiter.swift
 //  RateLimit
 //
 //  Created by Sam Soffes on 10/20/16.

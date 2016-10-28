@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210C04841DB93B8800B721DF /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* Limiter.swift */; };
-		210C04851DB93B8800B721DF /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* Limiter.swift */; };
-		210C04861DB93B8800B721DF /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* Limiter.swift */; };
-		210C04871DB93B8800B721DF /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* Limiter.swift */; };
+		210C04841DB93B8800B721DF /* SyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* SyncLimiter.swift */; };
+		210C04851DB93B8800B721DF /* SyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* SyncLimiter.swift */; };
+		210C04861DB93B8800B721DF /* SyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* SyncLimiter.swift */; };
+		210C04871DB93B8800B721DF /* SyncLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04831DB93B8800B721DF /* SyncLimiter.swift */; };
 		210C04891DB93CC000B721DF /* CountedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04881DB93CC000B721DF /* CountedLimiter.swift */; };
 		210C048A1DB93CC000B721DF /* CountedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04881DB93CC000B721DF /* CountedLimiter.swift */; };
 		210C048B1DB93CC000B721DF /* CountedLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C04881DB93CC000B721DF /* CountedLimiter.swift */; };
@@ -102,7 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		210C04831DB93B8800B721DF /* Limiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Limiter.swift; sourceTree = "<group>"; };
+		210C04831DB93B8800B721DF /* SyncLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncLimiter.swift; sourceTree = "<group>"; };
 		210C04881DB93CC000B721DF /* CountedLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedLimiter.swift; sourceTree = "<group>"; };
 		210C048D1DB93E7400B721DF /* Legacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legacy.swift; sourceTree = "<group>"; };
 		2154E0C31DB95FB0006D19E5 /* CountedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedTests.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		2154E0CF1DB96137006D19E5 /* Sync */ = {
 			isa = PBXGroup;
 			children = (
-				210C04831DB93B8800B721DF /* Limiter.swift */,
+				210C04831DB93B8800B721DF /* SyncLimiter.swift */,
 				36C08FD91B28EC85005DDE76 /* TimedLimter.swift */,
 				210C04881DB93CC000B721DF /* CountedLimiter.swift */,
 			);
@@ -590,7 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				210C04861DB93B8800B721DF /* Limiter.swift in Sources */,
+				210C04861DB93B8800B721DF /* SyncLimiter.swift in Sources */,
 				210C04901DB93E7400B721DF /* Legacy.swift in Sources */,
 				2154E0DC1DB961A5006D19E5 /* DebouncedLimiter.swift in Sources */,
 				217375251BA278DE0033461F /* TimedLimter.swift in Sources */,
@@ -603,7 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				210C04841DB93B8800B721DF /* Limiter.swift in Sources */,
+				210C04841DB93B8800B721DF /* SyncLimiter.swift in Sources */,
 				210C048E1DB93E7400B721DF /* Legacy.swift in Sources */,
 				2154E0E31DB961A7006D19E5 /* DebouncedLimiter.swift in Sources */,
 				36C08FDA1B28EC85005DDE76 /* TimedLimter.swift in Sources */,
@@ -635,7 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				210C04871DB93B8800B721DF /* Limiter.swift in Sources */,
+				210C04871DB93B8800B721DF /* SyncLimiter.swift in Sources */,
 				210C04911DB93E7400B721DF /* Legacy.swift in Sources */,
 				2154E0DA1DB961A3006D19E5 /* DebouncedLimiter.swift in Sources */,
 				21B8D2C81DB9384400E50211 /* TimedLimter.swift in Sources */,
@@ -658,7 +658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				210C04851DB93B8800B721DF /* Limiter.swift in Sources */,
+				210C04851DB93B8800B721DF /* SyncLimiter.swift in Sources */,
 				210C048F1DB93E7400B721DF /* Legacy.swift in Sources */,
 				2154E0E11DB961A7006D19E5 /* DebouncedLimiter.swift in Sources */,
 				36C08FDB1B28EC85005DDE76 /* TimedLimter.swift in Sources */,

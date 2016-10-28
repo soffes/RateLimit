@@ -1,6 +1,10 @@
 # Rate Limit
 
-[![Version](https://img.shields.io/github/release/soffes/RateLimit.svg)](https://github.com/soffes/RateLimit/releases) [![Build Status](https://travis-ci.org/soffes/RateLimit.svg?branch=master)](https://travis-ci.org/soffes/RateLimit) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/RateLimit.svg)](https://cocoapods.org/pods/RateLimit)
+[![Version](https://img.shields.io/github/release/soffes/RateLimit.svg)](https://github.com/soffes/RateLimit/releases)
+[![Build Status](https://travis-ci.org/soffes/RateLimit.svg?branch=master)](https://travis-ci.org/soffes/RateLimit)
+![Swift Version](https://img.shields.io/badge/swift-3.0.1-orange.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/RateLimit.svg)](https://cocoapods.org/pods/RateLimit)
 
 Simple utility for only executing code every so often.
 
@@ -26,4 +30,20 @@ Open up the included [Xcode project](RateLimit.xcodeproj) for an [example app](E
 
 ## Installation
 
-Simply add the files in the `RateLimit` directory to your project or add `RateLimit` to your Podfile if you're using CocoaPods.
+### Carthage
+
+[Carthage](https://github.com/carthage/carthage) is the recommended way to install Rate Limit. Add the following to your Cartfile:
+
+``` ruby
+github "soffes/Crypto"
+```
+
+### CocoaPods
+
+Add the following to your `Podfile`:
+
+``` ruby
+pod "RateLimit"
+```
+
+Then run `pod install`.

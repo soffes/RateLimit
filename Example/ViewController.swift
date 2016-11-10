@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		debouncedLimiter = DebouncedLimiter(limit: 0.2) { [weak self] in
+		debouncedLimiter = DebouncedLimiter(limit: 1) { [weak self] in
 			self?.debouncedExecutionCount += 1
 			self?.debouncedLabel.text = self?.textField.text
 		}

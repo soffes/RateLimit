@@ -16,7 +16,7 @@ public final class DebouncedLimiter: AsyncLimiter {
 	public let block: () -> Void
 	public let queue: DispatchQueue
 
-	private var lastExecutedAt: DispatchTime?
+	private var workItem: DispatchWorkItem?
 	private let syncQueue = DispatchQueue(label: "com.samsoffes.ratelimit.debounced", attributes: [])
 
 
@@ -31,34 +31,32 @@ public final class DebouncedLimiter: AsyncLimiter {
 
 	// MARK: - Limiter
 
+
 	public func execute() {
 		syncQueue.async { [weak self] in
+			if let workItem = self?.workItem {
+				workItem.cancel()
+				self?.workItem = nil
+			}
+
 			guard let queue = self?.queue,
+				let block = self?.block,
 				let limit = self?.limit
 			else { return }
 
-			let now = DispatchTime.now()
+			let workItem = DispatchWorkItem(block: block)
+			queue.asyncAfter(deadline: .now() + limit, execute: workItem)
 
-			if self?.lastExecutedAt == nil {
-				self?.lastExecutedAt = now
-			}
-
-			queue.asyncAfter(deadline: now + limit) {
-				guard let lastExecutedAt = self?.lastExecutedAt else { return }
-
-				let now = DispatchTime.now()
-
-				if now >= lastExecutedAt + limit {
-					self?.block()
-					self?.lastExecutedAt = now
-				}
-			}
+			self?.workItem = workItem
 		}
 	}
 
 	public func reset() {
 		syncQueue.async { [weak self] in
-			self?.lastExecutedAt = nil
+			if let workItem = self?.workItem {
+				workItem.cancel()
+				self?.workItem = nil
+			}
 		}
 	}
 }

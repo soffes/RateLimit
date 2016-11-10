@@ -12,15 +12,25 @@ import RateLimit
 final class DebouncedTests: XCTestCase {
 	func testDebouncing() {
 		let expecation = self.expectation(description: "executed")
-		let queue = DispatchQueue(label: "test-queue")
-		let limiter = DebouncedLimiter(limit: 1, queue: queue) {
+
+		var executedValue: Int?
+		var currentValue = 1
+
+		let limiter = DebouncedLimiter(limit: 1) {
+			executedValue = currentValue
 			expecation.fulfill()
 		}
 
 		limiter.execute()
+
+		currentValue = 2
 		limiter.execute()
+
+		currentValue = 3
 		limiter.execute()
 
 		waitForExpectations(timeout: 2)
+
+		XCTAssertEqual(3, executedValue)
 	}
 }

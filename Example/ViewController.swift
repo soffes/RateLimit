@@ -15,11 +15,13 @@ class ViewController: UIViewController {
 
 	@IBOutlet var textLabel: UILabel!
 
+	private let limiter = TimedLimiter(limit: 1)
+
 
 	// MARK: - Actions
 
 	@IBAction func execute(_ sender: AnyObject?) {
-		RateLimit.execute(name: "Example", limit: 1) {
+		limiter.execute {
 			textLabel.text = Date().description
 		}
 	}

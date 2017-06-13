@@ -7,7 +7,7 @@
 //
 
 public protocol AsyncLimiter {
-	var block: () -> Void { get }
+	var block: (() -> Void)? { get }
 	func execute()
 	func reset()
 }

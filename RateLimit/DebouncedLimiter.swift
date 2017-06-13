@@ -13,7 +13,7 @@ public final class DebouncedLimiter: AsyncLimiter {
 	// MARK: - Properties
 
 	public let limit: TimeInterval
-	public let block: () -> Void
+	public let block: (() -> Void)?
 	public let queue: DispatchQueue
 
 	private var workItem: DispatchWorkItem?
@@ -22,7 +22,7 @@ public final class DebouncedLimiter: AsyncLimiter {
 
 	// MARK: - Initializers
 
-	public init(limit: TimeInterval, queue: DispatchQueue = .main, block: @escaping () -> Void) {
+	public init(limit: TimeInterval, queue: DispatchQueue = .main, block: (() -> Void)? = nil) {
 		self.limit = limit
 		self.block = block
 		self.queue = queue
@@ -31,7 +31,7 @@ public final class DebouncedLimiter: AsyncLimiter {
 
 	// MARK: - Limiter
 
-	public func execute() {
+	public func execute(_ block: @escaping () -> Void) {
 		syncQueue.async { [weak self] in
 			if let workItem = self?.workItem {
 				workItem.cancel()
@@ -39,7 +39,6 @@ public final class DebouncedLimiter: AsyncLimiter {
 			}
 
 			guard let queue = self?.queue,
-				let block = self?.block,
 				let limit = self?.limit
 			else { return }
 
@@ -48,6 +47,11 @@ public final class DebouncedLimiter: AsyncLimiter {
 
 			self?.workItem = workItem
 		}
+	}
+
+	public func execute() {
+		guard let block = block else { assertionFailure("Block never assigned!"); return }
+		execute(block)
 	}
 
 	public func reset() {

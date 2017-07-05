@@ -33,4 +33,30 @@ final class DebouncedTests: XCTestCase {
 
 		XCTAssertEqual(3, executedValue)
 	}
+	
+	func testDebouncingClosure() {
+		let expectation = self.expectation(description: "executed")
+		let limiter = DebouncedLimiter(limit: 1)
+		var currentValue = 0
+
+		limiter.execute {
+			currentValue += 1
+		}
+		XCTAssertEqual(0, currentValue)
+
+		limiter.execute {
+			currentValue += 1
+		}
+		XCTAssertEqual(0, currentValue)
+
+		limiter.execute {
+			currentValue += 1
+			expectation.fulfill()
+		}
+		XCTAssertEqual(0, currentValue)
+
+		waitForExpectations(timeout: 2)
+		
+		XCTAssertEqual(1, currentValue)
+	}
 }

@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/github/release/soffes/RateLimit.svg)](https://github.com/soffes/RateLimit/releases)
 [![Build Status](https://travis-ci.org/soffes/RateLimit.svg?branch=master)](https://travis-ci.org/soffes/RateLimit)
-![Swift Version](https://img.shields.io/badge/swift-3.0.1-orange.svg)
+![Swift Version](https://img.shields.io/badge/swift-4.0-orange.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/RateLimit.svg)](https://cocoapods.org/pods/RateLimit)
 

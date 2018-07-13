@@ -13,11 +13,11 @@ public protocol SyncLimiter {
 
 
 extension SyncLimiter {
-	public func execute<T>(_ block: () -> T) -> T? {
+	public func execute<T>(_ block: () throws -> T) rethrows -> T? {
 		var value: T? = nil
 
-		execute {
-			value = block()
+		try execute {
+			value = try block()
 		}
 
 		return value

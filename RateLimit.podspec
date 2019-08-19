@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'RateLimit'
-  spec.version = '2.1.2'
+  spec.version = '2.1.3'
   spec.authors = {'Sam Soffes' => 'sam@soff.es'}
   spec.homepage = 'https://github.com/soffes/RateLimit'
   spec.summary = 'Simple utility for only executing code every so often.'
